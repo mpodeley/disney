@@ -1,150 +1,931 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viaje Florida – Septiembre 2025</title>
-  <style>
-    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background:#f5f7fa; color:#222;}
-    header {background:#0066cc; color:#fff; padding:1.2rem 1rem; text-align:center;}
-    h1 {margin:0; font-size:1.8rem;}
-    .map {width:100%; height:480px; border:none;}
-    .container {padding:1rem 5vw 3rem 5vw; max-width:1000px; margin:auto;}
-    .day {background:#fff; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,.08); margin:1rem 0; overflow:hidden;}
-    .day summary {cursor:pointer; padding:1rem 1.2rem; font-size:1.1rem; font-weight:bold; background:#e8f1ff;}
-    .day details {padding:1rem 1.2rem; line-height:1.45rem;}
-    a {color:#0066cc; text-decoration:none;}
-    a:hover {text-decoration:underline;}
-    .links {margin-top:0.4rem;}
-    .tips {font-size:0.9rem; color:#555; margin-top:0.6rem;}
-    footer {text-align:center; font-size:0.8rem; color:#777; padding:1rem 0 2rem 0;}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Florida con Peques &amp; Abuelos | 11–20 sep 2025</h1>
-    <p>Parques a full, un toque de ciencia y un posible lanzamiento 🚀</p>
-  </header>
+#f4f4f4;color: #333;}.container {max-width: 960px;margin: auto;background: #fff;padding: 30px;border-radius: 8px;box-shadow: 0 0 10px rgba(0,0,0,0.1);}h1, h2, h3, h4 {color: #00509e; /* Azul oscuro /margin-bottom: 0.7em;}h1 {text-align: center;border-bottom: 2px solid #00509e;padding-bottom: 10px;margin-bottom: 1em;}h2 {border-bottom: 1px solid #ccc;padding-bottom: 5px;margin-top: 1.5em;}a {color: #0077cc; / Azul brillante /text-decoration: none;}a:hover {text-decoration: underline;}ul, ol {margin-bottom: 1em;padding-left: 20px;}li {margin-bottom: 0.5em;}table {width: 100%;border-collapse: collapse;margin-bottom: 1.5em;font-size: 0.9em;}th, td {border: 1px solid #ddd;padding: 10px;text-align: left;}th {background-color: #e9ecef;color: #333;font-weight: bold;}tr:nth-child(even) {background-color: #f8f9fa;}.price-note {font-style: italic;color: #555;font-size: 0.9em;margin-top: -0.8em;margin-bottom: 1em;}.highlight {background-color: #fff3cd; / Amarillo claro /padding: 15px;border-left: 5px solid #ffeeba;margin: 1.5em 0;border-radius: 4px;}.accessibility-info {background-color: #e0f7fa; / Azul claro /padding: 15px;border-left: 5px solid #00bcd4;margin: 1.5em 0;border-radius: 4px;}.strategy-tip {background-color: #e8f5e9; / Verde claro /padding: 15px;border-left: 5px solid #a5d6a7;margin: 1.5em 0;border-radius: 4px;}.warning {background-color: #fce4ec; / Rosa claro /padding: 15px;border-left: 5px solid #f06292;margin: 1.5em 0;border-radius: 4px;}.address {font-style: italic;color: #666;margin-bottom: 1em;}/ Estilos específicos para LaTeX (simulados, ya que no se usa LaTeX real aquí) /.latex {font-family: "Times New Roman", Times, serif;/ Simular estilo LaTeX /}/ Clases para iconos (simulados) */.icon-park::before { content: "🌳 "; }.icon-attraction::before { content: "🎢 "; }.icon-dining::before { content: "🍽️ "; }.icon-hotel::before { content: "🏨 "; }.icon-accessibility::before { content: "♿ "; }.icon-transport::before { content: "🚗 "; }.icon-info::before { content: "ℹ️ "; }.icon-money::before { content: "💲 "; }.icon-calendar::before { content: "📅 "; }.icon-strategy::before { content: "💡 "; }.icon-link::before { content: "🔗 "; }.icon-map::before { content: "🗺️ "; }    /* Estilos para la sección KML */
+   .kml-guide code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+    }
+   .kml-guide pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+   .kml-guide.step {
+        margin-bottom: 1em;
+        padding-left: 20px;
+        position: relative;
+    }
+   .kml-guide.step::before {
+        content: counter(step-counter);
+        counter-increment: step-counter;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        background-color: #00509e;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+   .kml-guide ol {
+        list-style: none;
+        padding-left: 0;
+        counter-reset: step-counter;
+    }
 
-  <!-- Mapa general Florida con vista entre Miami y Orlando -->
-  <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=-82.3%2C24.9%2C-79.2%2C29.3&amp;layer=mapnik" title="Mapa Florida"></iframe>
+</style>
+<script type="text/javascript" src="[https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML](https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML)"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: ['<span class="math-inline">','</span>'], ["\\(","\\)"],
+      displayMath: ['<span class="math-block">','</span>'], ["\\[","\\]"],
+      processEscapes: true
+    }
+  });
+</script>
+</head><body><div class="container">    <h1><span class="icon-park"></span>Itinerario Mejorado: Aventura Familiar en Florida - Septiembre 2025</h1>
 
-  <div class="container">
-    <!-- Itinerario -->
+    <section id="introduccion">
+        <h2><span class="icon-info"></span>Bienvenida e Introducción</h2>
+        <p>Prepárense para una inolvidable aventura familiar en Florida, combinando la magia de los parques temáticos de Orlando, la maravilla de la exploración espacial y la vibrante cultura de Miami. Esta guía está diseñada para ser un recurso completo y práctico para su viaje en septiembre de 2025, ofreciendo detalles actualizados, estrategias eficientes y consideraciones esenciales para un viaje exitoso.</p>
+        <p>Entendiendo la naturaleza familiar de este viaje, se ha puesto especial énfasis en la planificación logística, la adaptabilidad para diferentes edades y la información detallada sobre accesibilidad en cada destino. El objetivo es proporcionarles un itinerario robusto y flexible que maximice la diversión y minimice el estrés, permitiéndoles crear recuerdos duraderos.</p>
+    </section>
 
-    <details class="day" open>
-      <summary>Jueves 11 sep – Vuelo &amp; traslado a Orlando</summary>
-      <div class="details">
-        <ul>
-          <li>Llegada <strong>Miami 16:15</strong> — retiro minivan (pre‑pagada SunPass).</li>
-          <li>Ruta <a href="https://www.google.com/maps/dir/MIA+Airport/Disney+Area+Kissimmee" target="_blank">MIA → Kissimmee (I‑95/I‑4)</a> (~3 h 30 min).</li>
-          <li>Check‑in Airbnb 21 h, cena rápida (pizza/Publix).</li>
-        </ul>
-        <p class="tips">Tip: cargar algo de desayuno para el viernes y evitar madrugar al súper.</p>
-      </div>
-    </details>
+    <section id="planificacion">
+        <h2><span class="icon-calendar"></span>Planificación Esencial del Viaje y Logística</h2>
 
-    <details class="day">
-      <summary>Viernes 12 sep – Magic Kingdom 🏰</summary>
-      <div class="details">
-        <ul>
-          <li>Llegar 08 h al parque (<a href="https://goo.gl/maps/fXN3YY5eHte4U97d6" target="_blank">mapa</a>). Rope‑drop para Seven Dwarfs.</li>
-          <li>Genie+ sólo si el índice de afluencia &gt;7/10 (chequear app 07 h).</li>
-          <li>Fuegos “Happily Ever After” 20 h.</li>
-        </ul>
-      </div>
-    </details>
+        <article id="contexto-septiembre">
+            <h3><span class="icon-calendar"></span>Su Panorama de Florida en Septiembre 2025</h3>
+            <h4>Contexto Climático</h4>
+            <p>Septiembre marca la transición del verano al otoño en Florida, pero sigue siendo un mes caracterizado por el calor y la humedad. Esperen temperaturas diurnas cálidas a calurosas, a menudo superando los 30°C (86°F), con alta humedad que puede hacer que se sienta aún más cálido. Las tormentas eléctricas por la tarde son muy comunes, generalmente breves pero intensas. Es crucial empacar ropa ligera, protección solar, sombreros y mantenerse hidratado.</p>
+            <div class="warning">
+                <p><strong>Advertencia sobre Huracanes:</strong> Septiembre es el pico de la temporada de huracanes en el Atlántico. Si bien la probabilidad de que un huracán impacte directamente sus planes de viaje es estadísticamente baja, es fundamental estar al tanto del pronóstico del tiempo antes y durante su viaje. Consideren adquirir un seguro de viaje que cubra cancelaciones o interrupciones relacionadas con el clima. La flexibilidad en el itinerario es clave durante esta temporada.[1, 2]</p>
+            </div>
+            <p>Se recomienda llevar ponchos o impermeables ligeros y calzado que pueda mojarse, ya que es casi seguro que encontrarán lluvia en algún momento.[2] Planificar actividades bajo techo durante las horas más calurosas o lluviosas de la tarde puede ser una buena estrategia.</p>
 
-    <details class="day">
-      <summary>Sábado 13 sep – Hollywood Studios &amp; Star Wars ✨</summary>
-      <div class="details">
-        <ul>
-          <li>Prioridad <strong>Rise of the Resistance</strong>, Tower of Terror y Mickey &amp; Minnie.</li>
-          <li><a href="https://goo.gl/maps/LQZx8iWoer2aWuKs9" target="_blank">Ubicación Hollywood Studios</a></li>
-          <li>Show nocturno Fantasmic 20 h.</li>
-        </ul>
-      </div>
-    </details>
+            <h4>Niveles de Multitud</h4>
+            <p>Históricamente, septiembre es uno de los meses menos concurridos para visitar los parques temáticos de Florida, especialmente después del fin de semana del Día del Trabajo (Labor Day).[1, 3, 4] Con las escuelas de vuelta en sesión en la mayor parte de EE. UU., las multitudes tienden a disminuir significativamente.</p>
+            <ul>
+                <li><strong>Principios a Mediados de Septiembre (aprox. 2-19 de sept.):</strong> Este período generalmente experimenta los niveles de multitud más bajos del año. Las estimaciones de calendarios de multitudes como Touring Plans o Undercover Tourist a menudo sitúan los niveles semanales entre 1/10 y 3/10 (siendo 1 el más bajo y 10 el más alto).[1, 5, 6] Visitar durante este tiempo puede significar esperas considerablemente más cortas en las atracciones.</li>
+                <li><strong>Finales de Septiembre (aprox. 20-30 de sept.):</strong> Hacia finales de mes, puede haber un ligero aumento en las multitudes. Esto puede deberse a la proximidad de las vacaciones de otoño tempranas para algunas escuelas, la finalización de ofertas de boletos especiales (como posibles ofertas para residentes de Florida) que incitan a visitas de última hora, y el inicio de la temporada de convenciones y eventos grupales.[1] Sin embargo, los niveles de multitud generalmente siguen siendo inferiores a los de los meses pico de verano o vacaciones.</li>
+            </ul>
+            <div class="highlight">
+                <p>Aunque septiembre ofrece la ventaja de multitudes más bajas, esto a menudo se traduce en horarios de parque ligeramente reducidos en comparación con la temporada alta.[1] Sin embargo, la capacidad de experimentar más atracciones con menos tiempo de espera puede compensar con creces las horas de operación más cortas.</p>
+                <p>Es importante notar que las métricas tradicionales de tiempo de espera pueden no reflejar perfectamente la asistencia real debido a sistemas como Genie+ y Lightning Lane, que pueden influir en cómo se distribuyen las esperas.[1] No obstante, la asistencia general esperada para principios y mediados de septiembre de 2025 sigue siendo muy favorable para los visitantes que buscan evitar las grandes aglomeraciones.</p>
+            </div>
 
-    <details class="day">
-      <summary>Domingo 14 sep – Universal Studios + Islands 🧙‍♂️🦖</summary>
-      <div class="details">
-        <ul>
-          <li>Llegar 08 h, primera parada: Hagrid’s.</li>
-          <li>Moverse en Hogwarts Express (requiere Park‑to‑Park).</li>
-          <li><a href="https://goo.gl/maps/5LktexBb6akaXpm59" target="_blank">Ubicación Universal</a></li>
-        </ul>
-      </div>
-    </details>
+            <h4>Eventos Especiales: Mickey's Not-So-Scary Halloween Party (MNSSHP)</h4>
+            <p>Un factor clave a considerar al planificar sus días en Magic Kingdom es la Mickey's Not-So-Scary Halloween Party (MNSSHP). Este es un evento nocturno con boleto separado que transforma el parque con decoración temática, entretenimiento exclusivo, personajes disfrazados y oportunidades de pedir dulces ("trick-or-treating").[7, 8, 9]</p>
+            <ul>
+                <li><strong>Fechas Predichas para Septiembre 2025:</strong> Las fechas oficiales para 2025 aún no se han anunciado (generalmente se anuncian en abril/mayo [7, 8, 10, 11]), pero basándose en patrones históricos [8, 12, 13], las fechas probables de fiesta en septiembre podrían incluir: 1, 5, 7, 9, 12, 14, 19, 21, 23, 25, 26, 28, 30. <strong>Estas son solo predicciones; verifiquen las fechas oficiales una vez publicadas.</strong></li>
+                <li><strong>Impacto en la Planificación:</strong> En las noches de fiesta, Magic Kingdom cierra temprano para los visitantes con boletos regulares, a menudo a las 6:00 PM.[14, 15] El espectáculo de fuegos artificiales regular, Happily Ever After, no se presenta en las noches de fiesta; en su lugar, se muestra el exclusivo "Disney's Not-So-Spooky Spectacular" para los asistentes a la fiesta.[8, 9]</li>
+                <li><strong>Boletos:</strong> Los boletos para MNSSHP son limitados y se venden por separado de la admisión regular al parque. Las fechas populares, especialmente Halloween y las primeras/últimas fiestas de la temporada, pueden agotarse rápidamente, a veces meses antes.[16, 17] Se recomienda comprar los boletos con anticipación una vez que salgan a la venta.[17]</li>
+            </ul>
+            <div class="strategy-tip">
+                <p><span class="icon-strategy"></span><strong>Consideración Estratégica:</strong> La programación de MNSSHP influye significativamente en la planificación de los días en Magic Kingdom. Visitar en un día sin fiesta permite disfrutar del parque durante más horas y ver el espectáculo de fuegos artificiales regular (Happily Ever After). Sin embargo, estos días pueden atraer multitudes ligeramente mayores, ya que otros visitantes también evitan los días de cierre temprano. Asistir a la fiesta (comprando un boleto adicional) ofrece una experiencia única con entretenimiento especial, la posibilidad de disfrazarse y, a menudo, tiempos de espera más cortos para las atracciones durante el evento.[9] Deben decidir qué experiencia priorizan y planificar sus días en Magic Kingdom en consecuencia, verificando cuidadosamente el calendario oficial una vez que esté disponible.</p>
+            </div>
+        </article>
 
-    <details class="day">
-      <summary>Lunes 15 sep – Volcano Bay 🌋💦</summary>
-      <div class="details">
-        <ul>
-          <li>Día de descanso activo en el water‑park (abre 10‑18 h).</li>
-          <li>Uso de Tapu Tapu para filas virtuales.</li>
-          <li><a href="https://goo.gl/maps/4dRWhe5W1mMPEkSg8" target="_blank">Ubicación Volcano Bay</a></li>
-        </ul>
-      </div>
-    </details>
+        <article id="transporte">
+            <h3><span class="icon-transport"></span>Desplazamientos: Vuelos, Alquiler de Coche y Conducción</h3>
+            <h4>Llegada al Aeropuerto Internacional de Miami (MIA)</h4>
+            <p>Su aventura probablemente comenzará o terminará en el Aeropuerto Internacional de Miami (MIA). Es un aeropuerto grande y concurrido, así que prevean tiempo suficiente para la recogida de equipaje y el alquiler de coches.</p>
 
-    <details class="day">
-      <summary>Martes 16 sep – EPCOT 🛰️</summary>
-      <div class="details">
-        <ul>
-          <li>Virtual queue 07 h para <strong>Guardians of the Galaxy</strong>.</li>
-          <li>World Showcase tarde + fuegos “Luminous” 21 h.</li>
-          <li><a href="https://goo.gl/maps/LCvm4rS96BcpWFSZA" target="_blank">Ubicación EPCOT</a></li>
-        </ul>
-      </div>
-    </details>
+            <h4>Centro de Alquiler de Coches (RCC) de MIA</h4>
+            <p>El Rental Car Center (RCC) de MIA alberga la mayoría de las principales compañías de alquiler.
+                <ul>
+                    <li><strong>Ubicación:</strong> 3900 NW 25th Street, Miami, FL 33142.[18, 19]</li>
+                    <li><strong>Acceso:</strong> Se accede mediante el MIA Mover, un tren elevado gratuito que conecta las terminales del aeropuerto con el RCC. La estación del MIA Mover se encuentra en el 3er nivel, entre los garajes Dolphin y Flamingo.[18, 20, 21, 22, 23] Sigan las señales moradas de "MIA Mover".</li>
+                    <li><strong>Compañías Principales:</strong> ACE, Alamo, Avis, Budget, Carnival, Dollar, Enterprise, Hertz, National, Payless, Royal, Sixt, Thrifty.[18]</li>
+                </ul>
+            </p>
 
-    <details class="day">
-      <summary>Miércoles 17 sep – Animal Kingdom 🐘 &amp; Outlet 🛍️</summary>
-      <div class="details">
-        <ul>
-          <li>Rope‑drop a Pandora (Avatar Flight) 08 h.</li>
-          <li>Parque cierra 18 h → salida a <a href="https://goo.gl/maps/sBFHyKVxpLR4BVgA8" target="_blank">Lake Buena Vista Factory Stores</a>.</li>
-        </ul>
-      </div>
-    </details>
+            <h4>Alquiler de Minivan</h4>
+            <p>Para un viaje familiar con equipaje, se recomienda alquilar una minivan para mayor comodidad y espacio.
+                <ul>
+                    <li><strong>Costo Estimado (Sept 2025):</strong> Los precios varían enormemente según la compañía, la antelación de la reserva y la demanda. Septiembre suele ser un mes más económico.[24] Las estimaciones de plataformas como Kayak sugieren promedios diarios que podrían rondar los $64-$104 USD [24], mientras que Expedia menciona ofertas desde $68 USD.[25] Sin embargo, el promedio general en MIA puede ser más bajo para coches estándar.[26] Es crucial comparar precios en varias plataformas (Kayak, Expedia, sitios directos de las compañías) y reservar con la mayor antelación posible para asegurar una buena tarifa y disponibilidad de minivans.</li>
+                    <li><strong>Compañías Populares:</strong> Además de las grandes marcas [18], pueden encontrar otras opciones como HDC Rent A Car.[24]</li>
+                </ul>
+            </p>
+            <div class="highlight">
+                <p>La fluctuación en los precios de alquiler, incluso en meses de menor demanda como septiembre, subraya la importancia de la planificación anticipada. Reservar una minivan con varios meses de antelación no solo aumenta la probabilidad de encontrar disponibilidad, sino que también ofrece la mejor oportunidad de asegurar tarifas más competitivas en comparación con las reservas de última hora.[24]</p>
+            </div>
 
-    <details class="day">
-      <summary>Jueves 18 sep – Kennedy Space Center 🚀 &amp; Miami</summary>
-      <div class="details">
-        <ul>
-          <li>Salida 09 h → <a href="https://goo.gl/maps/RoYR4fQME1uhafVH8" target="_blank">Kennedy Space Center</a> (1 h).</li>
-          <li>Tour Saturn V, simulador Shuttle Launch, chequear posibles lanzamientos.</li>
-          <li>15 h road‑trip a <a href="https://goo.gl/maps/cjHdZ5iRwdANekMs6" target="_blank">hotel aeropuerto Miami</a> (~3 h).</li>
-        </ul>
-        <p class="tips">Si hay lanzamiento programado 15‑17 sep, mover KSC un día antes y ajustar Animal/EPCOT.</p>
-      </div>
-    </details>
+            <h4>Tiempos de Conducción y Tráfico</h4>
+            <p>Planificar los traslados entre el sur y el centro de Florida requiere considerar los tiempos de conducción y el posible tráfico.</p>
+            <ul>
+                <li><strong>MIA a Kissimmee/Área Disney (Aprox. 218 millas / 350 km):</strong> El tiempo base de conducción es de aproximadamente 3.5 horas.[27, 28] Sin embargo, el tráfico, especialmente al salir del área de Miami o al acercarse a Orlando, puede añadir una hora o más. Eviten las horas pico de Miami si es posible (generalmente 7-9 AM hacia el sur/centro y 3-7 PM hacia el norte).[24, 29] Salir de MIA a media mañana (ej. 10 AM) o después de la hora pico de la tarde suele ser lo mejor.[29] La Florida's Turnpike (autopista de peaje) es generalmente más rápida y menos congestionada que la I-95 para este trayecto.[29]</li>
+                <li><strong>Kissimmee/Área Disney a Kennedy Space Center (Aprox. 60 millas / 97 km):</strong> Esperen un tiempo de conducción de 1 a 1.5 horas.[30, 31, 32] La ruta más común implica tomar carreteras de peaje como la FL-417 (Central Florida GreeneWay) hacia la FL-528 (Beachline Expressway).[33, 34] El tráfico en la I-4 cerca de las zonas turísticas puede ser denso, por lo que las rutas de peaje suelen ser preferibles.[34]</li>
+                <li><strong>Kennedy Space Center al Área de MIA (Aprox. 210 millas / 338 km):</strong> Similar al viaje hacia el norte, planifiquen unas 3.5 - 4 horas de conducción base.[35, 36] Sin embargo, si viajan en una tarde de día laborable, el tráfico al acercarse a Miami puede aumentar significativamente este tiempo.[37] Es aconsejable revisar aplicaciones de tráfico como Waze, Google Maps o el sitio FL511 [38] antes de salir y durante el viaje para anticipar retrasos.</li>
+            </ul>
+            <div class="highlight">
+                <p>Dada la variabilidad del tráfico, especialmente en torno a Miami y Orlando, es prudente añadir un colchón de tiempo a estas estimaciones, sobre todo si tienen horarios fijos (como vuelos o reservas). El uso de carreteras de peaje, aunque implica un costo adicional, a menudo ahorra tiempo y reduce el estrés del tráfico en comparación con las rutas gratuitas como la I-95 o tramos congestionados de la I-4.[29, 33, 34]</p>
+            </div>
 
-    <details class="day">
-      <summary>Viernes 19 sep – Frost Science Museum 🔭 + Playa</summary>
-      <div class="details">
-        <ul>
-          <li>10‑14 h <a href="https://goo.gl/maps/VYqJMSoMPWkiWi2Q6" target="_blank">Frost Science &amp; Planetario</a>.</li>
-          <li>Tarde Key Biscayne (<a href="https://goo.gl/maps/raRzsW1k6mkUQo1y9" target="_blank">mapa</a>) o Little Havana.</li>
-        </ul>
-      </div>
-    </details>
+            <h4>Repostaje de Combustible</h4>
+            <ul>
+                <li><strong>Gasolineras Cerca del RCC de MIA:</strong> Hay varias gasolineras muy cerca del centro de alquiler de coches, como Shell (2501 NW 42nd Ave) [19, 39, 40], Exxon (2801 NW 42nd Ave) [19] y Airport 76 (2721 NW 42nd Ave).[39, 41]</li>
+                <li><strong>Advertencia de Precios:</strong> Es una práctica común que las gasolineras inmediatamente adyacentes a los centros de alquiler de aeropuertos cobren precios significativamente más altos por galón.[42]</li>
+                <li><strong>Recomendación:</strong> Antes de devolver el coche de alquiler (asumiendo que necesitan devolverlo con el depósito lleno [43]), utilicen una aplicación de precios de gasolina (como GasBuddy) para localizar una gasolinera un poco más alejada (1-2 millas) del RCC. El ahorro potencial puede ser considerable.[42]</li>
+                <li><strong>Pronóstico de Precios de Gasolina en Florida (Sept 2025):</strong> Predecir los precios con tanta antelación es intrínsecamente incierto debido a la volatilidad del mercado y factores geopolíticos.[44] Sin embargo, algunas previsiones para 2025 sugieren que los precios promedio en Florida podrían situarse en un rango de $3.12 a $3.51 USD por galón [44], potencialmente ligeramente por debajo del promedio nacional. Datos históricos recientes muestran precios alrededor de $2.96/gal en abril de 2025 [45] y $3.21/gal en septiembre de 2024.[46] Utilicen estas cifras solo como una guía aproximada y presupuesten con cierta flexibilidad.</li>
+            </ul>
+            <div class="highlight">
+                <p>El sobreprecio en las gasolineras pegadas al aeropuerto es una queja común entre los viajeros.[42] Tomarse unos minutos extra para conducir una milla o dos puede traducirse en un ahorro notable al llenar el depósito antes de la devolución, una estrategia simple pero efectiva para optimizar el presupuesto del viaje.</p>
+            </div>
 
-    <details class="day">
-      <summary>Sábado 20 sep – ¡Regreso!</summary>
-      <div class="details">
-        <ul>
-          <li>Devolución auto 06:30 h (llenar tanque en <a href="https://goo.gl/maps/jZaTNqv4eGRDpKhH7" target="_blank">Shell Le Jeune</a>).</li>
-          <li>Vuelo MIA 09:10 → EZE 19:15.</li>
-        </ul>
-      </div>
-    </details>
+            <h4>Peajes Simplificados: Opciones de SunPass</h4>
+            <p>Florida utiliza ampliamente sistemas de peaje electrónico (muchas carreteras ya no aceptan efectivo). Es esencial tener un plan para pagar los peajes con su coche de alquiler.</p>
+            <ul>
+                <li><strong>Opción 1: Programa de la Compañía de Alquiler:</strong> La mayoría de las compañías ofrecen un programa de peaje. Usualmente funciona mediante el reconocimiento de la matrícula; la compañía de alquiler recibe la factura del peaje y luego carga a su tarjeta de crédito el costo del peaje MÁS tarifas administrativas.[47]
+                    <ul>
+                        <li><em>Ejemplos de Tarifas (sujetas a cambios):</em> Hertz/Dollar/Thrifty (PlatePass): ~$13.99/día o ~$69.95/semana (peajes ilimitados incluidos en la tarifa).[47] Avis/Budget/Payless (e-Toll): ~$12.99/día o ~$64.95/semana (peajes ilimitados) O una tarifa administrativa diaria ($6.95-$7.95) CADA DÍA que se incurre en un peaje, MÁS el costo de los peajes.[47] National/Alamo/Enterprise (TollPass): ~$4.95 por CADA DÍA que se incurre en un peaje (máximo ~$30 por período de alquiler), MÁS el costo de los peajes.[47]</li>
+                        <li><em>Consideración:</em> Estas tarifas administrativas pueden acumularse rápidamente en un viaje de 10 días, haciendo que esta sea a menudo la opción más cara.[47]</li>
+                    </ul>
+                </li>
+                <li><strong>Opción 2: Transpondedor SunPass Personal:</strong> Si ya poseen un transpondedor SunPass (Portable o PRO), pueden usarlo en el coche de alquiler.[48, 49]
+                    <ul>
+                        <li><em>Proceso:</em> Deben añadir la matrícula del coche de alquiler y las fechas de inicio/fin del alquiler a su cuenta SunPass online o por teléfono (1-888-TOLL-FLA).[47, 48, 49]</li>
+                        <li><em>Importante:</em> ¡Recuerden retirar el transpondedor del coche al devolverlo!.[47, 48] Asegúrense de que el transpondedor esté correctamente montado en el parabrisas.[49]</li>
+                        <li><em>Costo:</em> Solo el costo de los peajes (a la tarifa descontada de SunPass) más el costo inicial del transpondedor si necesitan comprar uno ($4.99 Mini Sticker, $14.95 PRO Portable).[49] SunPass PRO funciona en más estados.[49]</li>
+                    </ul>
+                </li>
+                <li><strong>Opción 3: Visitor Toll Pass (Solo para alquileres en el Aeropuerto de Orlando - MCO):</strong> Este programa permite a los visitantes que alquilan en MCO obtener un pase temporal (colgante) a través de una aplicación móvil y máquinas expendedoras en el aeropuerto.[50] Se paga un depósito ($10 USD) y los peajes se deducen de ahí. El pase se devuelve en el aeropuerto. <strong>Nota:</strong> Como este itinerario probablemente implica alquilar/devolver en MIA, esta opción no sería directamente aplicable, pero es útil conocerla para futuros viajes a Orlando.</li>
+            </ul>
+            <div class="highlight">
+                <p>Para un viaje de 10 días con desplazamientos entre Miami y Orlando, depender únicamente del programa de peaje de la compañía de alquiler puede resultar significativamente más caro debido a las tarifas administrativas diarias o semanales.[47] Si planean visitar Florida con regularidad o si el ahorro es una prioridad, adquirir y utilizar un transpondedor SunPass personal suele ser la opción más económica a largo plazo, ya que solo pagan los peajes (con descuento) sin tarifas adicionales por día de uso.[48, 49]</p>
+            </div>
+        </article>
 
-  </div>
+        <article id="alojamiento-notas">
+            <h3><span class="icon-hotel"></span>Notas sobre Alojamiento</h3>
+            <p>Este itinerario asume estancias en hoteles en la zona de Kissimmee/Orlando durante la visita a los parques temáticos y cerca del Aeropuerto de Miami (MIA) para la última noche o noches antes de la partida. Las recomendaciones específicas de hoteles se detallarán en las secciones correspondientes más adelante.</p>
+        </article>
 
-  <footer>
-    Hecho con 💙 para la aventura familiar.
-  </footer>
-</body>
-</html>
+        <article id="presupuesto">
+            <h3><span class="icon-money"></span>Presupuestando Su Aventura (Tabla de Costos Estimados)</h3>
+            <p class="price-note">La siguiente tabla ofrece una estimación <strong>muy aproximada</strong> de los costos para una familia hipotética de 2 adultos y 2 niños durante un viaje de 10 días en septiembre de 2025. Los costos reales pueden variar enormemente según las elecciones específicas de hoteles, comidas, compras y extras opcionales. Utilicen esta tabla como punto de partida para su propio presupuesto detallado.</p>
+
+            <table>
+                <caption>Tabla: Presupuesto Estimado Viaje a Florida 10 Días (Sept 2025 - Familia de 4)</caption>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Rango de Costo Estimado (USD, Antes de Impuestos)</th>
+                        <th>Notas / Referencias Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vuelos</td>
+                        <td>Varía Mucho</td>
+                        <td><em>No cubierto por la investigación, depende del usuario</em></td>
+                    </tr>
+                    <tr>
+                        <td>Alojamiento (9 noches)</td>
+                        <td>$1500 - $4000+</td>
+                        <td><em>Depende mucho del nivel del hotel (Económico/Moderado/De Lujo/Fuera del sitio)</em></td>
+                    </tr>
+                    <tr>
+                        <td>Boletos Parques Temáticos (WDW Base 4 Días + UOR 3 Parques 4 Días P2P)</td>
+                        <td>~$3000 - $3500</td>
+                        <td>WDW Base 4 Días: ~$550-$650/persona.[51, 52] UOR 3 Parques 4 Días P2P: ~$375-$400/persona.[53, 54] <em>Verificar fechas exactas.</em></td>
+                    </tr>
+                    <tr>
+                        <td>Admisión KSC (1 Día)</td>
+                        <td>~$280</td>
+                        <td>~$75/adulto, ~$65/niño.[55, 56]</td>
+                    </tr>
+                    <tr>
+                        <td>Admisión Frost Science (1 Día)</td>
+                        <td>~$110 - $125</td>
+                        <td>~$30-$35/adulto, ~$23-$25/niño.[57, 58] <em>Precios variables.</em></td>
+                    </tr>
+                    <tr>
+                        <td>Alquiler Minivan (10 días)</td>
+                        <td>~$650 - $1100+</td>
+                        <td>~$64-$104+/día.[24, 25] <em>Reservar temprano.</em></td>
+                    </tr>
+                    <tr>
+                        <td>Gasolina</td>
+                        <td>~$150 - $250</td>
+                        <td><em>Estimado basado en ~800 millas y ~$3.30/gal avg.</em> [44]</td>
+                    </tr>
+                    <tr>
+                        <td>Peajes</td>
+                        <td>~$50 - $150</td>
+                        <td><em>Depende de rutas y método SunPass.</em> [47]</td>
+                    </tr>
+                    <tr>
+                        <td>Comida (Mezcla QS/TS)</td>
+                        <td>~$1500 - $2500+</td>
+                        <td>~$150-$250+/día. Comidas QS ~$14 adulto/$8 niño.[59] Comidas TS ~$50-$70+ adulto.[60, 61]</td>
+                    </tr>
+                    <tr>
+                        <td>Genie+/Express (Opcional)</td>
+                        <td>~$1000 - $2000+</td>
+                        <td>WDW G+ ~$25-$35/día/persona.[62, 63] UOR Express ~$120-$200+/día/persona.[64, 65] <em>Muy variable.</em></td>
+                    </tr>
+                    <tr>
+                        <td>Estacionamiento (Parques/Hotel)</td>
+                        <td>~$250 - $350</td>
+                        <td>Estacionamiento parques WDW/UOR ~$30/día. KSC $15.[66] Algunos hoteles cobran.</td>
+                    </tr>
+                    <tr>
+                        <td>Souvenirs/Extras</td>
+                        <td>Varía Mucho</td>
+                        <td><em>Depende del usuario</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Estimado (Excl. Vuelos/Souvenirs)</strong></td>
+                        <td><strong>~$7,500 - $14,000+</strong></td>
+                        <td><em>Altamente dependiente de las elecciones.</em></td>
+                    </tr>
+                </tbody>
+            </table>
+             <p class="price-note">Esta tabla consolida información dispersa sobre costos de boletos, alquiler, comida y otros gastos, proporcionando una visión general crucial para la planificación financiera inicial. Demuestra cómo las decisiones, como optar por servicios de "saltar la fila" o el estilo de comidas, impactan significativamente el presupuesto total.</p>
+        </article>
+    </section>
+
+    <section id="wdw">
+        <h2><span class="icon-park"></span>Walt Disney World: Dominando la Magia (Aprox. 4 Días)</h2>
+
+        <article id="wdw-overview">
+            <h3><span class="icon-info"></span>Descripción General de WDW: Parques, Horarios y Boletos</h3>
+            <p>Walt Disney World Resort (WDW) cerca de Orlando consta de cuatro parques temáticos principales:</p>
+            <ul>
+                <li><span class="icon-park"></span><strong>Magic Kingdom:</strong> El parque clásico estilo castillo con tierras temáticas como Fantasyland y Adventureland.[67, 68]</li>
+                <li><span class="icon-park"></span><strong>EPCOT:</strong> Dividido en Future World (ahora World Discovery, World Nature, World Celebration) y World Showcase, centrado en la innovación y las culturas internacionales.[67, 68]</li>
+                <li><span class="icon-park"></span><strong>Disney's Hollywood Studios:</strong> Enfocado en el cine, la televisión y el entretenimiento, hogar de Star Wars: Galaxy's Edge y Toy Story Land.[67, 68]</li>
+                <li><span class="icon-park"></span><strong>Disney's Animal Kingdom:</strong> Una combinación de parque temático y zoológico, con atracciones como Pandora – The World of Avatar y safaris africanos.[67, 68]</li>
+            </ul>
+            <p>También hay dos parques acuáticos: Disney's Typhoon Lagoon y Disney's Blizzard Beach. Basado en patrones históricos, es probable que Typhoon Lagoon esté abierto en septiembre, mientras que Blizzard Beach podría estar cerrado por temporada.[14, 15]</p>
+            <p><span class="icon-link"></span>Sitio web oficial de Walt Disney World: <a href="[https://disneyworld.disney.go.com/](https://disneyworld.disney.go.com/)" target="_blank">disneyworld.disney.go.com</a> [67]</p>
+
+            <h4>Horarios Estimados de los Parques (Septiembre 2025)</h4>
+            <p>Los horarios de los parques varían según el día y la temporada, y se ven afectados por eventos como MNSSHP. Siempre consulten el calendario oficial o la aplicación My Disney Experience más cerca de su fecha de viaje.[69, 70, 71] Los rangos típicos basados en datos de septiembre de 2024 son:</p>
+            <ul>
+                <li><strong>Magic Kingdom:</strong> Aprox. 9:00 AM - 10:00 PM (noches sin fiesta); Aprox. 9:00 AM - 6:00 PM (noches de fiesta MNSSHP).[14, 15] Aperturas a las 8:00 AM son posibles en algunos días.[15, 72]</li>
+                <li><strong>EPCOT:</strong> Aprox. 9:00 AM - 9:00 PM.[14, 15, 73, 74]</li>
+                <li><strong>Hollywood Studios:</strong> Aprox. 9:00 AM - 9:00 PM (posiblemente hasta las 9:30 PM o 10:00 PM en algunas noches).[14, 15, 72, 75, 76]</li>
+                <li><strong>Animal Kingdom:</strong> Aprox. 8:00 AM - 6:00 PM o 7:00 PM.[14, 15, 72, 77, 78]</li>
+            </ul>
+            <p><strong>Early Theme Park Entry:</strong> Los huéspedes que se alojen en hoteles de Disney Resort (y hoteles selectos asociados) tienen el beneficio de ingresar a cualquier parque temático 30 minutos antes de la apertura oficial todos los días.[69, 70, 71, 73, 78, 79, 80, 81, 82, 83, 84, 85]</p>
+
+            <h4>Costos Estimados de Boletos (2025)</h4>
+            <p>WDW utiliza un sistema de precios basado en la fecha, lo que significa que el costo del boleto varía según el día específico de visita.[52, 86] Septiembre generalmente cae en un período de precios más bajos.[1, 52]</p>
+            <ul>
+                <li><strong>Boleto Base Estándar de 4 Días (1 Parque por Día):</strong> Estimado entre $550 y $650 USD por persona (mayores de 10 años) antes de impuestos, basado en estructuras de precios generales.[51, 52, 86, 87] Este es un rango; el precio exacto dependerá de las fechas específicas de septiembre elegidas. Consulten el sitio web oficial de Disney para obtener precios precisos.[88]</li>
+                <li><strong>Complementos Park Hopper / Park Hopper Plus:</strong>
+                    <ul>
+                        <li><em>Park Hopper:</em> Permite visitar más de un parque temático después de las 2:00 PM el mismo día.[51] Costo adicional estimado: ~$65-$85 USD por día por boleto.[51, 86]</li>
+                        <li><em>Park Hopper Plus:</em> Incluye los beneficios del Park Hopper más un cierto número de visitas a parques acuáticos, campos de golf Oak Trail o campos de minigolf.[51, 68] Costo adicional estimado: ~$85-$105 USD por día por boleto.[51, 86]</li>
+                    </ul>
+                </li>
+                <li><strong>Boletos Discover Disney para Residentes de Florida:</strong> Estén atentos a posibles ofertas especiales para residentes de Florida. En el pasado, han ofrecido boletos de 3 o 4 días a precios significativamente reducidos (ej. 4 días por ~$240+impuestos) válidos durante períodos específicos.[51, 89, 90, 91] Requieren prueba de residencia de Florida.</li>
+                <li><strong>Boletos Militares:</strong> Hay disponibles boletos promocionales para miembros del servicio militar de EE. UU. y sus familias.[91]</li>
+            </ul>
+             <p class="price-note">La estructura de precios de los boletos de WDW requiere una verificación cuidadosa en el sitio web oficial de Disney para las fechas exactas de su viaje.[88] Si son residentes de Florida, investigar las ofertas "Discover Disney" podría generar ahorros sustanciales.[89] La opción Park Hopper añade flexibilidad pero también un costo considerable, por lo que deben evaluar si se ajusta a su estilo de visita.</p>
+        </article>
+
+        <article id="wdw-accesibilidad">
+            <h3><span class="icon-accessibility"></span>Accesibilidad en Walt Disney World</h3>
+            <p>Walt Disney World se compromete a proporcionar un entorno acogedor e inclusivo para todos los visitantes.[92, 93, 94] Ofrecen una amplia gama de servicios para huéspedes con diversas necesidades. <span class="icon-link"></span>Página principal de Accesibilidad de WDW: <a href="[https://disneyworld.disney.go.com/guest-services/guests-with-disabilities/](https://disneyworld.disney.go.com/guest-services/guests-with-disabilities/)" target="_blank">Servicios para Huéspedes con Discapacidades</a>.[93, 95, 96]</p>
+
+            <div class="accessibility-info">
+                <h4>Servicio de Acceso para Discapacitados (DAS)</h4>
+                <ul>
+                    <li><strong>Elegibilidad:</strong> DAS está destinado principalmente a huéspedes que, debido a una discapacidad del desarrollo como el autismo o similar, no pueden esperar en una fila convencional durante un período prolongado.[92, 97, 98, 99, 100] Es importante notar que Disney ha enfatizado recientemente esta definición.[97, 101] Para otras necesidades (ej. médicas que requieren descansos frecuentes), pueden existir otras adaptaciones como el Reingreso a la Fila.[93, 100, 101]</li>
+                    <li><strong>Registro:</strong> El registro para DAS <strong>debe</strong> realizarse a través de un chat de video en vivo (actualmente solo en inglés) con un Cast Member. Esto se puede hacer hasta 60 días antes de la visita o el mismo día de la visita.[92, 99, 102] <strong>No hay opción de registro en persona en Guest Relations dentro de los parques</strong>.[92, 99, 102] El huésped que solicita DAS debe estar presente durante la videollamada y se le tomará una foto.[92, 99, 102] Se requiere una cuenta My Disney Experience y boletos válidos vinculados.[99] El chat de video está disponible de 7:00 AM a 8:00 PM, hora del Este.[99]</li>
+                    <li><strong>Funcionamiento:</strong> Una vez registrado y dentro del parque, el huésped puede solicitar horarios de regreso para las atracciones a través de la aplicación My Disney Experience o en Guest Relations.[92, 98, 102] El horario de regreso será comparable al tiempo de espera actual de la fila normal. Solo se puede tener un horario de regreso activo a la vez.[92] El titular de DAS debe montar la atracción.[92, 98, 99]</li>
+                    <li><strong>Tamaño del Grupo:</strong> El titular de DAS más hasta 3 acompañantes (total 4 personas).[92, 98, 102] Pueden hacerse excepciones para miembros de la familia inmediata.[97, 98, 102]</li>
+                    <li><strong>Validez:</strong> DAS es válido por la duración del boleto o hasta 240 días, lo que ocurra primero.[92, 98, 99, 102] Se requiere volver a registrarse después de que expire.</li>
+                </ul>
+                <div class="highlight">
+                    <p>El proceso de registro exclusivamente virtual para DAS y los criterios de elegibilidad específicos requieren una planificación considerable por adelantado. Las familias que necesiten este servicio deben prepararse para la entrevista por videochat antes de su viaje o el mismo día. Aquellas familias cuyas necesidades no se alineen estrictamente con la definición de "discapacidad del desarrollo" deben contactar proactivamente a los Servicios de Accesibilidad de Disney para explorar alternativas como el Reingreso a la Fila.[93, 100, 101]</p>
+                </div>
+            </div>
+
+            <h4>Asistencia de Movilidad</h4>
+            <ul>
+                <li><strong>Alquiler de Sillas de Ruedas/ECV:</strong> Disponibles en los parques y en Disney Springs.[93, 96] Se recomienda reservar con antelación, especialmente los ECV (scooters eléctricos), debido a la disponibilidad limitada. (Los costos específicos no se detallaron en la investigación proporcionada).</li>
+                <li><strong>Uso de Dispositivos de Movilidad Personales:</strong> Permitido.[96] Es importante conocer los requisitos de transferencia para cada atracción (Permanecer en Silla de Ruedas/ECV, Transferir de ECV a Silla de Ruedas, Transferir a Vehículo de Atracción, Debe ser Ambulatorio).[96] Consulten las guías de accesibilidad de WDW o pregunten a un Cast Member en la atracción.</li>
+                <li><strong>Accesibilidad del Transporte:</strong> La mayoría de los sistemas de transporte (autobuses, monorraíl, Minnie Vans accesibles) están equipados para huéspedes con discapacidades de movilidad.[93, 96] Los autobuses tienen elevadores y sistemas de sujeción.[96]</li>
+                <li><strong>Estacionamiento Accesible:</strong> Disponible en todos los parques y resorts con un permiso de estacionamiento válido. Se aplican las tarifas estándar de estacionamiento.[93, 96]</li>
+                <li><strong>Etiqueta "Cochecito como Silla de Ruedas":</strong> Los huéspedes que usen un cochecito (stroller) como dispositivo de movilidad para un niño con discapacidad pueden obtener una etiqueta especial en Guest Relations. Esto permite que el cochecito permanezca con el niño en las filas de las atracciones.[100]</li>
+            </ul>
+
+            <h4>Adaptaciones Sensoriales y Cognitivas</h4>
+            <ul>
+                <li><strong>Lugares para Descansar:</strong> Los mapas de los parques y las guías de accesibilidad indican áreas más tranquilas adecuadas para tomar un descanso sensorial.[93] Se recomienda planificar estos descansos en el itinerario. Consulten la página de soporte Neurodivergente de WDW.[103]</li>
+                <li><strong>Guías Sensoriales:</strong> Hay disponibles guías que detallan los estímulos sensoriales (luces, sonidos, olores, etc.) de las atracciones para ayudar a prepararse.[93]</li>
+                <li><strong>Consejos para Esperar en Fila:</strong> Consideren llevar juguetes sensoriales, dispositivos electrónicos, libros u otros objetos que puedan ayudar a calmar o distraer durante las esperas.[100]</li>
+            </ul>
+
+            <h4>Adaptaciones Visuales y Auditivas</h4>
+            <ul>
+                <li><strong>Guías en Braille y Mapas Táctiles:</strong> Disponibles en Guest Relations (requieren un depósito reembolsable).[94, 104] También existen mapas fijos en Braille en los parques.[94, 104]</li>
+                <li><strong>Descripción de Audio y Subtítulos Portátiles:</strong> Se proporcionan a través del Dispositivo Portátil de Disney (Handheld Device) disponible en Guest Relations (requiere depósito reembolsable).[93, 94, 104]</li>
+                <li><strong>Interpretación en Lenguaje de Señas Americano (ASL):</strong> Disponible para ciertos espectáculos en vivo. Se debe solicitar con antelación (consultar el sitio web de WDW para detalles y plazos).[9]</li>
+                <li><strong>Escucha Asistida (Assistive Listening):</strong> Disponible en muchos teatros y atracciones.[93]</li>
+            </ul>
+
+            <h4>Otros Servicios</h4>
+            <ul>
+                <li><strong>Baños Acompañantes (Companion Restrooms):</strong> Disponibles en todos los parques temáticos y resorts. Son baños individuales, de género neutro, que ofrecen más espacio y privacidad. Son ideales para huéspedes que necesitan asistencia de un acompañante o cuidador.[93, 103] Algunos pueden tener inodoros de descarga manual para necesidades sensoriales.[103]</li>
+                <li><strong>Animales de Servicio:</strong> Son bienvenidos en la mayoría de las áreas de WDW. Existen restricciones específicas para ciertas atracciones. Hay áreas designadas para el alivio de animales de servicio en los parques y resorts.[93, 100, 104, 105]</li>
+                <li><strong>Centros de Primeros Auxilios:</strong> Ubicados en cada parque temático, ofrecen servicios médicos básicos, almacenamiento de medicamentos y otros remedios rápidos.[93, 104]</li>
+                <li><strong>Solicitudes Dietéticas Especiales:</strong> La mayoría de los restaurantes pueden acomodar alergias y necesidades dietéticas especiales. Notifiquen al hacer la reserva y hablen con un chef o gerente en el lugar.[93]</li>
+            </ul>
+
+            <h4>Recursos de Planificación de Accesibilidad</h4>
+            <p>Para obtener la información más detallada y actualizada, consulten los siguientes recursos oficiales:</p>
+            <ul>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/guests-with-disabilities/](https://disneyworld.disney.go.com/guest-services/guests-with-disabilities/)" target="_blank">Página General de Accesibilidad</a> [93, 95, 96]</li>
+                <li><span class="icon-link"></span>Guía de Planificación de Accesibilidad y Recomendaciones [93]</li>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/mobility/](https://disneyworld.disney.go.com/guest-services/mobility/)" target="_blank">Servicios para Huéspedes con Discapacidades de Movilidad</a> [96]</li>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/blind-lowvision/](https://disneyworld.disney.go.com/guest-services/blind-lowvision/)" target="_blank">Servicios para Huéspedes con Discapacidades Visuales</a> [104]</li>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/hearing/](https://disneyworld.disney.go.com/guest-services/hearing/)" target="_blank">Servicios para Huéspedes con Discapacidades Auditivas</a></li>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/neurodivergent/](https://disneyworld.disney.go.com/guest-services/neurodivergent/)" target="_blank">Servicios para Huéspedes Neurodivergentes</a> [103]</li>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/disability-access-service/](https://disneyworld.disney.go.com/guest-services/disability-access-service/)" target="_blank">Información sobre DAS</a> [92]</li>
+                <li><span class="icon-link"></span><a href="[https://disneyworld.disney.go.com/guest-services/disability-access-service-register/](https://disneyworld.disney.go.com/guest-services/disability-access-service-register/)" target="_blank">Registro de DAS</a> [99]</li>
+            </ul>
+
+            <table>
+                <caption>Tabla: Características Clave de Accesibilidad en WDW</caption>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Detalles/Disponibilidad</th>
+                        <th>Cómo Acceder</th>
+                        <th>Referencias Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Servicio de Acceso para Discapacitados (DAS)</td>
+                        <td>Adaptación de fila para discapacidades del desarrollo</td>
+                        <td>Chat de video pre-llegada/día de visita</td>
+                        <td>[92, 97, 98, 99, 100, 101, 102]</td>
+                    </tr>
+                    <tr>
+                        <td>Alquiler de Sillas de Ruedas/ECV</td>
+                        <td>Todos los parques, Disney Springs</td>
+                        <td>Puntos de alquiler cerca de las entradas</td>
+                        <td>[93, 96]</td>
+                    </tr>
+                    <tr>
+                        <td>Baños Acompañantes</td>
+                        <td>En parques y resorts</td>
+                        <td>Mapas del Parque / App My Disney Experience</td>
+                        <td>[93, 103]</td>
+                    </tr>
+                    <tr>
+                        <td>Áreas de Alivio para Animales de Servicio</td>
+                        <td>Lugares designados en parques/resorts</td>
+                        <td>Mapas del Parque / App My Disney Experience</td>
+                        <td>[104, 105]</td>
+                    </tr>
+                    <tr>
+                        <td>Guías Sensoriales/Áreas de Descanso</td>
+                        <td>Guías disponibles; áreas tranquilas señaladas</td>
+                        <td>Guest Relations / Guías de Accesibilidad</td>
+                        <td>[93, 103]</td>
+                    </tr>
+                    <tr>
+                        <td>Descripción de Audio/Subtítulos</td>
+                        <td>Dispositivo portátil</td>
+                        <td>Guest Relations (depósito reembolsable)</td>
+                        <td>[93, 94, 104]</td>
+                    </tr>
+                    <tr>
+                        <td>Guías en Braille/Mapas Táctiles</td>
+                        <td>Guías y mapas portátiles disponibles</td>
+                        <td>Guest Relations (depósito reembolsable)</td>
+                        <td>[94, 104]</td>
+                    </tr>
+                    <tr>
+                        <td>Transporte Accesible</td>
+                        <td>Autobuses, Monorraíl, Minnie Vans</td>
+                        <td>Puntos de transporte estándar</td>
+                        <td>[93, 96]</td>
+                    </tr>
+                    <tr>
+                        <td>Etiqueta "Cochecito como Silla de Ruedas"</td>
+                        <td>Permite cochecito en filas</td>
+                        <td>Guest Relations</td>
+                        <td>[100]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="price-note">Esta tabla resume las características de accesibilidad más críticas, facilitando la planificación para familias con necesidades específicas y permitiendo una rápida referencia a los servicios disponibles y cómo obtenerlos.</p>
+
+        </article>
+
+        <article id="wdw-mk">
+            <h3><span class="icon-park"></span>Magic Kingdom: Estrategias y Puntos Destacados</h3>
+            <p class="address">Dirección: 1180 Seven Seas Dr, Lake Buena Vista, FL 32830.[106, 107, 108]</p>
+
+            <h4>Estrategia de Apertura ("Rope Drop")</h4>
+            <p>Llegar antes de la apertura oficial del parque es crucial para experimentar las atracciones más populares con esperas mínimas.</p>
+            <ul>
+                <li><strong>Hora de Llegada:</strong> Para maximizar el Early Theme Park Entry (EE), lleguen a las puertas del parque entre 60 y 90 minutos antes de la apertura oficial (es decir, 30-60 minutos antes del inicio del EE).[79, 80] Los huéspedes sin EE deben llegar unos 30 minutos antes de la apertura oficial.[80]</li>
+                <li><strong>Acceso Early Entry (EE):</strong> Los huéspedes elegibles ingresan por Main Street, U.S.A. y se dirigen hacia la derecha del Castillo de Cenicienta, donde se verifica la elegibilidad.[80, 81] Luego, son retenidos en puentes que conducen a Fantasyland y Tomorrowland hasta poco antes del inicio oficial del EE (a menudo 5-15 minutos antes).[80, 81]</li>
+                <li><strong>Estrategias de EE:</strong>
+                    <ul>
+                        <li><strong>Opción 1 (Prioridad Máxima - Seven Dwarfs Mine Train):</strong> Diríjanse directamente a Fantasyland, pasando por Mad Tea Party.[79] <em>Advertencia:</em> Esta es la opción más popular; la fila se forma extremadamente rápido, incluso antes de que comience el EE.[79, 81] Para una espera realmente corta (ej. 15 min), es necesario estar entre los primeros en la zona de espera, lo que implica llegar muy temprano (30+ min antes del EE).[81] Puede no ser práctico con cochecitos.[109]</li>
+                        <li><strong>Opción 2 (Alternativa Popular - Peter Pan's Flight):</strong> Sigan la ruta hacia Fantasyland pero continúen más allá de Seven Dwarfs Mine Train, cerca del carrusel.[79, 109] Sigue siendo muy popular; intenten estar en la zona de espera 10-15 minutos antes del EE.[81] Buena opción si compran Individual Lightning Lane (ILL) para Mine Train o si llevan cochecito.[79, 109]</li>
+                        <li><strong>Opción 3 (Enfoque en Tomorrowland - Space Mountain):</strong> Crucen el puente hacia Tomorrowland.[79, 80] Generalmente, una espera inicial más corta que las principales atracciones de Fantasyland si se llega 10-15 minutos antes del EE.[81] Permite seguir con Buzz Lightyear's Space Ranger Spin.[81]</li>
+                    </ul>
+                </li>
+                <li><strong>Estrategia Sin Early Entry:</strong> Al momento de la apertura oficial ("segunda caída de la cuerda" o "second rope drop"), la mayoría de los huéspedes de EE estarán concentrados en Fantasyland/Tomorrowland. Diríjanse a Adventureland, Frontierland o Liberty Square.[79] Prioricen atracciones como Jungle Cruise, Haunted Mansion, Tiana's Bayou Adventure o Big Thunder Mountain Railroad, ya que sus esperas serán más bajas inicialmente.[79, 110]</li>
+            </ul>
+            <div class="strategy-tip">
+                 <p><span class="icon-strategy"></span>Llegar justo a la hora de inicio del Early Entry puede no ser suficiente para evitar esperas significativas en las atracciones más demandadas como Seven Dwarfs Mine Train o Peter Pan's Flight. La verdadera ventaja del EE para estas atracciones se obtiene llegando considerablemente antes del inicio oficial del período de 30 minutos.[81] Para quienes llegan más cerca de la hora de inicio, dirigirse a Space Mountain u otras atracciones de Fantasyland menos populares puede ser un uso más eficiente del tiempo.</p>
+            </div>
+
+            <h4>Atracciones Clave</h4>
+            <ul>
+                <li><span class="icon-attraction"></span><strong>Tiana's Bayou Adventure:</strong> Ubicada en Frontierland.[111] Abrió el 28 de junio de 2024 [111, 112, 113, 114], reemplazando a Splash Mountain. Es una atracción tipo "log flume" (troncos por agua) con una caída de 52.5 pies (16m).[111] Presenta figuras Audio-Animatronics avanzadas.[111, 113, 114] Requisito de altura: 40 pulgadas (102 cm).[112] <strong>Acceso:</strong> Para septiembre de 2025, se espera que utilice la fila normal (standby) y el servicio Lightning Lane Multi Pass (Genie+).[112, 115] La Fila Virtual inicial dejó de usarse en febrero de 2025.[112, 116]</li>
+                <li><span class="icon-attraction"></span><strong>Seven Dwarfs Mine Train:</strong> En Fantasyland.[79, 81] Montaña rusa familiar muy popular con largas esperas.[79, 81] Requisito de altura: 38 pulgadas (97 cm).[117] <strong>Acceso:</strong> Fila normal (standby) o compra de Individual Lightning Lane (ILL).[81, 109]</li>
+                <li><span class="icon-attraction"></span><strong>TRON Lightcycle / Run:</strong> En Tomorrowland.[80, 110] Montaña rusa de alta velocidad. Requisito de altura: 48 pulgadas (122 cm).[117] <strong>Acceso (Probable para Sept 2025):</strong> Fila Virtual o compra de Individual Lightning Lane (ILL). <strong>Es crucial verificar el método de acceso actual en la app My Disney Experience</strong> cerca de la fecha del viaje, ya que podría cambiar a fila normal.[110, 118]</li>
+            </ul>
+
+            <h4>Entretenimiento</h4>
+            <ul>
+                <li><strong>Happily Ever After:</strong> Espectáculo nocturno de fuegos artificiales y proyecciones sobre el Castillo de Cenicienta.[119, 120, 121] Consulten la app My Disney Experience o la Guía de Horarios para la hora exacta (generalmente 9:00 PM o más tarde).[6, 119] <em>Recordatorio: No se presenta en noches de MNSSHP</em>.[8, 9]</li>
+                <li><strong>Disney Festival of Fantasy Parade:</strong> Desfile diurno que recorre el parque. Verifiquen el horario en la app.[6, 68, 69, 70, 73]</li>
+                <li><strong>Entretenimiento de MNSSHP:</strong> Si asisten a la fiesta, disfruten del desfile "Mickey's Boo-To-You Halloween Parade", el espectáculo "Hocus Pocus Villain Spelltacular" y los fuegos artificiales "Disney's Not-So-Spooky Spectacular".[7, 8]</li>
+            </ul>
+        </article>
+
+        <article id="wdw-epcot">
+            <h3><span class="icon-park"></span>EPCOT: Future World y World Showcase</h3>
+            <p class="address">Dirección: 200 Epcot Center Drive, Lake Buena Vista, FL 32821 / 32830.[122, 123]</p>
+
+            <h4>Atracciones Clave</h4>
+            <ul>
+                <li><span class="icon-attraction"></span><strong>Guardians of the Galaxy: Cosmic Rewind:</strong> Ubicada en World Discovery. Montaña rusa interior innovadora con lanzamiento inverso y vehículos que giran 360 grados.[124] <strong>Acceso (Probable para Sept 2025):</strong> Fila Virtual o compra de Individual Lightning Lane (ILL). <strong>Verifiquen el método de acceso actual en la app My Disney Experience</strong>.[118, 124]
+                    <ul>
+                        <li><em>Guía de Fila Virtual (si aplica):</em> Se une a las 7:00 AM (desde cualquier lugar) o a la 1:00 PM (requiere estar dentro de EPCOT) a través de la app.[118, 124, 125] La disponibilidad es limitada y se agota muy rápido, especialmente a las 7 AM.[125, 126] Confirmen su grupo en la app antes de la hora de apertura de la fila.[125] Necesitan buena conexión a internet/celular.[125] También hay una oportunidad a las 6:00 PM en noches con Horas Nocturnas Extendidas (Extended Evening Hours) para huéspedes elegibles.[124, 125]</li>
+                        <li><em>Individual Lightning Lane (ILL):</em> Opción de compra individual a través de la app para un horario específico.[124, 126] El precio varía históricamente entre $14 y $19 USD.[127, 128, 129]</li>
+                    </ul>
+                </li>
+                <li><span class="icon-attraction"></span><strong>Remy's Ratatouille Adventure:</strong> En el Pabellón de Francia (World Showcase).[68] Atracción familiar 4D. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+).</li>
+                <li><span class="icon-attraction"></span><strong>Frozen Ever After:</strong> En el Pabellón de Noruega (World Showcase).[68] Paseo en bote muy popular. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+).</li>
+                <li><span class="icon-attraction"></span><strong>Test Track:</strong> En World Discovery. Permite diseñar un coche virtual y probarlo. <em>Nota Importante:</em> Esta atracción está programada para una reimaginación importante. <strong>Es posible que esté cerrada por remodelación en septiembre de 2025. Verifiquen su estado operativo antes de la visita</strong>.[7, 69, 70, 73] Si está abierta, el <strong>Acceso</strong> es: Fila normal (standby), Fila de Jinete Individual (Single Rider) o Lightning Lane Multi Pass (Genie+).</li>
+            </ul>
+
+            <h4>Entretenimiento</h4>
+            <ul>
+                <li><strong>Luminous The Symphony of Us:</strong> Espectáculo nocturno sobre la World Showcase Lagoon con fuegos artificiales, fuentes, láseres y música.[130, 131, 132, 133, 134] Generalmente se presenta a las 9:00 PM.[73, 130, 133, 134] Dura aproximadamente 17 minutos.[130] Hay buenos puntos de vista alrededor de toda la laguna.</li>
+            </ul>
+
+            <h4>Festivales</h4>
+            <p>Es muy probable que el <strong>EPCOT International Food & Wine Festival</strong> esté en marcha durante septiembre (basado en la programación histórica [74]). Este popular festival incluye numerosos quioscos de comida y bebida alrededor de World Showcase, conciertos ("Eat to the Beat"), seminarios y mercancía especial. Consulten las fechas oficiales del festival para 2025 cuando se anuncien.</p>
+        </article>
+
+         <article id="wdw-hs">
+            <h3><span class="icon-park"></span>Hollywood Studios: Magia del Cine y Emociones Fuertes</h3>
+            <p class="address">Dirección: 351 S Studio Dr, Lake Buena Vista, FL 32830.[135, 136, 137]</p>
+
+            <h4>Estrategia de Apertura ("Rope Drop")</h4>
+            <p>La estrategia aquí se centra a menudo en Star Wars: Galaxy's Edge y Toy Story Land.</p>
+             <ul>
+                <li><strong>Hora de Llegada:</strong> Para atracciones principales con EE, lleguen 45-60 minutos antes del inicio del EE.[138] Huéspedes sin EE, lleguen 30 minutos antes de la apertura oficial.[82]</li>
+                <li><strong>Estrategias de EE:</strong>
+                    <ul>
+                        <li><strong>Opción 1 (Enfoque Star Wars - Rise of the Resistance - *Alto Riesgo*):</strong> Dirigirse directamente a Galaxy's Edge.[138] <em>Advertencia Importante:</em> Esta atracción es conocida por tener tiempos de inactividad frecuentes y podría no abrir con el parque.[82, 138, 139] Intentar hacer "rope drop" aquí es arriesgado y podría consumir tiempo valioso si la atracción no está operativa.[139, 140, 141] <strong>Recomendación General:</strong> Es más seguro comprar un Individual Lightning Lane (ILL) para Rise of the Resistance [82, 138, 139] o intentar montar justo antes del cierre del parque.[82, 139, 140] Si deciden intentar el "rope drop", tengan un plan B inmediato (ej. Millennium Falcon: Smugglers Run [138, 139]).</li>
+                        <li><strong>Opción 2 (Enfoque Toy Story Land - Slinky Dog Dash):</strong> Dirigirse directamente a Toy Story Land.[138] Es extremadamente popular, genera largas esperas y la fila es mayormente al aire libre (calurosa).[138, 139] Es un uso más fiable del EE si no se compra ILL para Rise.[139, 140] Puede seguirse con Toy Story Mania o ir hacia Tower of Terror.[82, 139]</li>
+                        <li><strong>Opción 3 (Enfoque Emociones - Tower of Terror / Rock 'n' Roller Coaster):</strong> Dirigirse a la derecha por Sunset Boulevard.[82, 138] Una opción sólida, especialmente para huéspedes sin EE, ya que las multitudes iniciales pueden concentrarse en Slinky Dog o Rise.[82] Permite experimentar ambas atracciones con esperas relativamente cortas al principio del día.[82]</li>
+                    </ul>
+                </li>
+                 <li><strong>Estrategia Sin Early Entry:</strong> Eviten ir directamente a Rise of the Resistance o Slinky Dog Dash en la apertura oficial, ya que las filas estarán infladas por los huéspedes de EE.[139, 140] Consideren empezar en Sunset Boulevard (Tower of Terror, Rock 'n' Roller Coaster) [82] o con atracciones como Star Tours o Mickey & Minnie's Runaway Railway.</li>
+            </ul>
+             <div class="strategy-tip">
+                 <p><span class="icon-strategy"></span>La naturaleza impredecible de Star Wars: Rise of the Resistance [82, 138, 139] hace que priorizarla en la apertura sea una apuesta. A menos que acepten el riesgo de perder tiempo valioso por la mañana, asegurar un ILL o planificar montarla al final del día ofrece una mayor probabilidad de éxito. Enfocar el Early Entry en Slinky Dog Dash, aunque también muy demandado, presenta un riesgo operativo menor.</p>
+             </div>
+
+            <h4>Atracciones Clave</h4>
+            <ul>
+                <li><span class="icon-attraction"></span><strong>Star Wars: Rise of the Resistance:</strong> En Galaxy's Edge.[68, 138] Una experiencia inmersiva y compleja. <strong>Acceso:</strong> Fila normal (standby) o compra de Individual Lightning Lane (ILL).[85, 142, 143, 144] <em>La Fila Virtual ya no se utiliza para esta atracción</em>.[85, 142, 144, 145] El precio del ILL varía, históricamente entre $15 y $25 USD.[127, 128]</li>
+                <li><span class="icon-attraction"></span><strong>Slinky Dog Dash:</strong> En Toy Story Land.[68, 138] Montaña rusa familiar muy popular. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+). Suele ser una de las primeras selecciones de Genie+ en agotarse.[138]</li>
+                <li><span class="icon-attraction"></span><strong>The Twilight Zone Tower of Terror:</strong> En Sunset Boulevard.[68, 138] Atracción de caída emocionante. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+).</li>
+                <li><span class="icon-attraction"></span><strong>Millennium Falcon: Smugglers Run:</strong> En Galaxy's Edge.[68, 138] Simulador interactivo. <strong>Acceso:</strong> Fila normal (standby), Fila de Jinete Individual (Single Rider) o Lightning Lane Multi Pass (Genie+).</li>
+                 <li><span class="icon-attraction"></span><strong>Mickey & Minnie's Runaway Railway:</strong> Ubicada dentro de la réplica del Grauman's Chinese Theatre. Atracción familiar sin vías. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+).</li>
+            </ul>
+
+            <h4>Entretenimiento</h4>
+            <ul>
+                <li><strong>Fantasmic!:</strong> Espectáculo nocturno acuático en el Hollywood Hills Amphitheater.[146, 147, 148] Combina pantallas de agua, proyecciones, láseres, fuegos artificiales y personajes Disney (Moana, Frozen 2, Mulan, etc.).[146] Los horarios varían, a menudo hay 1 o 2 funciones por noche (ej. 9:00 PM, 10:30 PM).[69, 70, 146, 149] Consulten el horario oficial.[146, 148] Lleguen con bastante antelación (se recomiendan 60-90 minutos) para conseguir buenos asientos.[146, 148] Hay disponibles Paquetes de Comida Fantasmic! que garantizan asientos en una sección reservada (reservas necesarias en restaurantes participantes como 50's Prime Time Café, Hollywood & Vine, Mama Melrose's Ristorante Italiano, Sci-Fi Dine-In Theater Restaurant, The Hollywood Brown Derby).[147, 148, 149, 150]</li>
+                <li><strong>Wonderful World of Animation:</strong> Espectáculo nocturno de proyecciones sobre la fachada del Teatro Chino.[69, 70, 73, 146] Consulten el horario.</li>
+            </ul>
+        </article>
+
+        <article id="wdw-ak">
+             <h3><span class="icon-park"></span>Animal Kingdom: Aventuras Salvajes</h3>
+             <p class="address">Dirección: 2901 Osceola Pkwy, Lake Buena Vista/Orlando, FL 32830.[151, 152, 153, 154]</p>
+
+            <h4>Estrategia de Apertura ("Rope Drop")</h4>
+             <p>La mayoría de los visitantes se dirigen a Pandora - The World of Avatar al abrir.</p>
+             <ul>
+                <li><strong>Hora de Llegada:</strong> Para EE con enfoque en Pandora, lleguen 45-60 minutos antes del inicio del EE.[83] Huéspedes sin EE, lleguen 30 minutos antes de la apertura oficial.[84]</li>
+                <li><strong>Acceso Early Entry (EE):</strong> Los huéspedes elegibles suelen ser dirigidos hacia Pandora o hacia Dinoland U.S.A./Asia (para Expedition Everest).[84]</li>
+                <li><strong>Estrategias de EE:</strong>
+                    <ul>
+                        <li><strong>Opción 1 (Prioridad Máxima - Flight of Passage):</strong> Dirigirse directamente a Pandora.[83] <em>Advertencia:</em> Aquí es donde se concentra la mayor parte de la multitud de EE; la fila crece exponencialmente rápido.[83, 84, 155, 156] Para minimizar la espera, es necesario estar entre los primerísimos, llegando 30+ minutos antes del EE.[84, 156] Aunque la atracción tiene alta capacidad, la espera inicial será significativa.[83, 157]</li>
+                        <li><strong>Opción 2 (Alternativa Pandora - Na'vi River Journey):</strong> Ir a Pandora pero montar primero Na'vi River Journey.[83, 84, 156] La avalancha inicial es menor que para FoP.[84] Buena opción si se compra ILL para FoP o si la espera de FoP ya es muy alta.[84, 156] Podría permitir montar FoP después con una espera algo reducida respecto al pico.[84]</li>
+                        <li><strong>Opción 3 (Fuera de Pandora):</strong> Usar el EE para Expedition Everest o DINOSAUR.[84, 156] Las multitudes iniciales serán menores que en Pandora.[156]</li>
+                    </ul>
+                </li>
+                 <li><strong>Estrategia Sin Early Entry:</strong> <strong>Eviten Flight of Passage en la apertura oficial</strong>.[155, 157] La fila ya será larga debido al EE. En su lugar, diríjanse a Kilimanjaro Safaris (los animales suelen estar más activos por la mañana) [83, 155, 156, 157] o a Expedition Everest.[83, 157] Planifiquen montar Flight of Passage al final del día (última hora antes del cierre) [83, 157] o compren un ILL.[83, 155]</li>
+            </ul>
+             <div class="strategy-tip">
+                <p><span class="icon-strategy"></span>Para Animal Kingdom, a menos que la máxima prioridad sea Flight of Passage y estén dispuestos a llegar extremadamente temprano para el Early Entry, a menudo resulta más eficiente comenzar con Na'vi River Journey, Kilimanjaro Safaris o Expedition Everest. Dada la alta demanda y la concentración de multitudes en Flight of Passage por la mañana, es generalmente preferible abordarla comprando un Individual Lightning Lane o haciendo fila justo antes del cierre del parque para una espera potencialmente menor.</p>
+             </div>
+
+            <h4>Atracciones Clave</h4>
+            <ul>
+                <li><span class="icon-attraction"></span><strong>Avatar Flight of Passage:</strong> En Pandora.[67, 83] Simulador 3D inmersivo, extremadamente popular. Requisito de altura: 44 pulgadas (112 cm). <strong>Acceso:</strong> Fila normal (standby) o compra de Individual Lightning Lane (ILL).[83, 155] El precio del ILL varía, históricamente entre $11 y $18 USD.[127, 128]</li>
+                <li><span class="icon-attraction"></span><strong>Na'vi River Journey:</strong> En Pandora.[83] Paseo tranquilo en bote por un bosque bioluminiscente. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+).</li>
+                <li><span class="icon-attraction"></span><strong>Kilimanjaro Safaris:</strong> En Africa.[83] Recorrido en vehículo abierto por una sabana con animales vivos. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+). Se recomienda ir temprano por la mañana o al final de la tarde para mayor actividad animal.[83, 155, 156, 157]</li>
+                <li><span class="icon-attraction"></span><strong>Expedition Everest - Legend of the Forbidden Mountain:</strong> En Asia.[83] Montaña rusa con tramos hacia atrás. Requisito de altura: 44 pulgadas (112 cm). <strong>Acceso:</strong> Fila normal (standby), Fila de Jinete Individual (Single Rider) o Lightning Lane Multi Pass (Genie+).</li>
+                 <li><span class="icon-attraction"></span><strong>DINOSAUR:</strong> En Dinoland U.S.A. Viaje oscuro y movido en el tiempo. <strong>Acceso:</strong> Fila normal (standby) o Lightning Lane Multi Pass (Genie+).</li>
+            </ul>
+
+            <h4>Entretenimiento</h4>
+            <p>No se pierdan espectáculos como <strong>Festival of the Lion King</strong> (en Africa) y <strong>Finding Nemo: The Big Blue... and Beyond!</strong> (en Dinoland U.S.A.). Consulten la app My Disney Experience para los horarios.</p>
+        </article>
+
+        <article id="wdw-genie">
+            <h3><span class="icon-strategy"></span>Navegando las Esperas: Guía de Genie+, Lightning Lane y ILL</h3>
+            <p>Walt Disney World utiliza un sistema de pago para "saltar la fila" llamado Lightning Lane, gestionado a través de la aplicación My Disney Experience. Comprender sus componentes es clave para maximizar el tiempo en el parque.</p>
+
+            <h4>Sistema General</h4>
+            <p>Existen principalmente dos formas de acceder a las filas Lightning Lane (más rápidas):</p>
+            <ol>
+                <li><strong>Lightning Lane Multi Pass (anteriormente conocido como Genie+):</strong> Un servicio de pago diario por parque que permite reservar horarios de llegada para la mayoría de las atracciones, una a la vez.</li>
+                <li><strong>Lightning Lane Single Pass (Individual Lightning Lane - ILL):</strong> Una compra a la carta para acceder a las atracciones más demandadas (generalmente 1 o 2 por parque) que no están incluidas en el Multi Pass.</li>
+            </ol>
+            <p><em>Nota: Existe un "Premier Pass" de muy alto costo que ofrece más flexibilidad, pero probablemente sea excesivo para la mayoría de los viajes familiares.[62, 128]</em></p>
+
+            <h4>Lightning Lane Multi Pass (Genie+)</h4>
+            <ul>
+                <li><strong>Funcionamiento:</strong> Permite reservar ventanas de llegada de una hora para numerosas atracciones a lo largo del día usando la app My Disney Experience. Se puede hacer la siguiente reserva después de escanear en la atracción actual o 120 minutos después de haber hecho la reserva anterior (lo que ocurra primero).</li>
+                <li><strong>Costo (Estimado Sept 2025):</strong> El precio varía según el parque y el día. Basado en datos históricos, esperen un rango de $15 a $39 USD+ por persona por día.[62, 63, 158, 159, 160] Septiembre probablemente tendrá precios en el extremo inferior de este rango.</li>
+                <li><strong>Estrategia:</strong> Prioricen la reserva de atracciones con alta demanda y disponibilidad limitada de LL (ej. Slinky Dog Dash, Jungle Cruise, Peter Pan's Flight, Frozen Ever After). Es posible "apilar" reservas para usarlas más tarde en el día. Familiarícense con la app y las prioridades de reserva antes del viaje.</li>
+            </ul>
+
+            <h4>Lightning Lane Single Pass (ILL)</h4>
+            <ul>
+                <li><strong>Funcionamiento:</strong> Compra individual para las atracciones más populares (las que no están en el Multi Pass). Permite seleccionar una ventana de llegada específica al comprar. Se pueden comprar hasta dos pases ILL diferentes por persona por día.[127, 143]</li>
+                <li><strong>Atracciones ILL Típicas y Costo Estimado (Sept 2025):</strong> Los precios varían según la atracción y el día. Rangos históricos [127, 128, 161, 162, 163]:
+                    <ul>
+                        <li>Seven Dwarfs Mine Train (MK): ~$10 - $14 USD</li>
+                        <li>TRON Lightcycle / Run (MK): ~$20 - $22 USD</li>
+                        <li>Guardians of the Galaxy: Cosmic Rewind (EPCOT): ~$14 - $19 USD</li>
+                        <li>Star Wars: Rise of the Resistance (HS): ~$15 - $25 USD</li>
+                        <li>Avatar Flight of Passage (AK): ~$11 - $18 USD</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4><span class="icon-calendar"></span>¡Novedad 2025! Compra Anticipada de Lightning Lane</h4>
+            <p>Un cambio significativo implementado recientemente es la capacidad de comprar pases Lightning Lane (tanto Multi Pass como Single Pass) y seleccionar atracciones y ventanas de llegada <strong>antes</strong> del día de la visita.[143]</p>
+            <ul>
+                <li><strong>Huéspedes de Hoteles Disney Resort (y selectos):</strong> Pueden comprar y seleccionar a partir de <strong>7 días antes</strong> del primer día de su estancia en el resort, para toda la duración de su estancia (hasta 14 días).[143]</li>
+                <li><strong>Todos los Demás Huéspedes:</strong> Pueden comprar y seleccionar a partir de <strong>3 días antes</strong> del día de visita.[143]</li>
+                <li><strong>Requisito:</strong> Se necesita una admisión válida al parque temático (y posiblemente una reserva de parque, según el tipo de admisión) vinculada a la cuenta My Disney Experience antes de poder comprar.[143]</li>
+            </ul>
+            <div class="highlight">
+                <p>Esta nueva capacidad de reserva anticipada transforma la estrategia de planificación. Ya no es necesario depender exclusivamente de las reservas el mismo día a las 7:00 AM. Las familias ahora pueden asegurar el acceso a algunas de sus atracciones prioritarias con antelación, reduciendo el estrés matutino y garantizando potencialmente esas experiencias clave. Esto da una ventaja significativa a quienes planifican con anticipación, especialmente a los huéspedes de hoteles Disney con la ventana de 7 días. Asegúrense de aprovechar esta opción de reserva anticipada una vez que estén dentro de su ventana de elegibilidad.</p>
+            </div>
+
+            <h4>¿Vale la Pena el Costo?</h4>
+            <p>La decisión de comprar Lightning Lane depende del presupuesto, la tolerancia a las esperas y las prioridades del grupo.</p>
+            <ul>
+                <li><strong>Pros:</strong> Ahorra tiempo significativo en filas, reduce la frustración, permite experimentar más atracciones.</li>
+                <li><strong>Contras:</strong> Costo adicional considerable (especialmente para una familia), requiere planificación y uso constante de la app, puede sentirse menos espontáneo.</li>
+                <li><strong>Recomendación General:</strong> Muy recomendable para Magic Kingdom y Hollywood Studios debido a la alta concentración de atracciones populares. Útil en EPCOT si se priorizan atracciones como Frozen, Remy y Test Track (si está abierta). Menos esencial en Animal Kingdom, especialmente si se hace "rope drop" eficazmente o se compra ILL para Flight of Passage. Su valor disminuye en días de multitudes muy bajas.</li>
+            </ul>
+        </article>
+
+        <article id="wdw-dining">
+            <h3><span class="icon-dining"></span>Comidas en Disney</h3>
+            <ul>
+                <li><strong>Mobile Order:</strong> Es muy recomendable utilizar la función Mobile Order en la app My Disney Experience para pedir comida en la mayoría de los restaurantes de servicio rápido (Quick Service). Permite seleccionar una ventana de recogida y pagar por adelantado, evitando largas filas para pedir.[93, 100]</li>
+                <li><strong>Reservas de Comidas (ADR):</strong> Para los restaurantes de servicio de mesa (Table Service), especialmente los populares (personajes, temáticos), es casi imprescindible hacer Reservas Anticipadas de Comida (ADR). Se pueden hacer hasta 60 días antes de la visita a través de la app o el sitio web de Disney.</li>
+                <li><strong>Costos Estimados de Comidas:</strong>
+                    <ul>
+                        <li>Comida de Servicio Rápido (QS): ~$14-$27 USD por adulto, ~$8-$10 USD por niño.[59, 164]</li>
+                        <li>Comida de Servicio de Mesa (TS - sin personajes): ~$44-$77+ USD por adulto, ~$15-$16+ USD por niño (los restaurantes de autor son más caros).[164]</li>
+                        <li>Comida con Personajes: ~$50-$65 USD por adulto, ~$30-$40 USD por niño.[59]</li>
+                        <li>Snacks/Bocadillos: Promedio ~$6 USD.[164]</li>
+                    </ul>
+                </li>
+                <li><strong>Plan de Comidas Disney (si aplica):</strong> Si han adquirido un Paquete Vacacional que incluye un Plan de Comidas Disney, familiarícense con los créditos que incluye (ej. Plan QS: 2 comidas QS, 1 snack por noche; Plan Estándar: 1 comida TS, 1 comida QS, 1 snack por noche) y sus costos para 2025 (QS: ~$59 adulto/$25 niño; Estándar: ~$98 adulto/$31 niño).[59, 129, 150, 165] Para maximizar su valor, usen los créditos de TS en las comidas más caras (como cenas con personajes o buffets).[150]</li>
+                <li><strong>Ahorrar con Comestibles:</strong> Consideren pedir comestibles para entrega en su hotel (usando servicios como Garden Grocer, Instacart, Amazon Fresh) o visitar un supermercado cercano (Publix, Walmart, Target en la zona de Kissimmee/Lake Buena Vista [166, 167, 168]). Esto es ideal para desayunos rápidos en la habitación, snacks, bebidas y agua embotellada, lo que puede generar ahorros significativos. Tengan en cuenta que Publix puede cobrar un recargo por los pedidos para recoger en la acera (curbside).[167]</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="uor">
+        <h2><span class="icon-park"></span>Universal Orlando Resort: Emociones y Hechicería (Aprox. 3-4 Días)</h2>
+
+         <article id="uor-overview">
+             <h3><span class="icon-info"></span>Descripción General de UOR: Parques, Horarios y Boletos</h3>
+             <p>Universal Orlando Resort (UOR) cuenta con tres parques principales (pronto serán cuatro):</p>
+             <ul>
+                <li><span class="icon-park"></span><strong>Universal Studios Florida (USF):</strong> Enfocado en películas y cultura pop, con áreas como The Wizarding World of Harry Potter - Diagon Alley.[169, 170, 171]</li>
+                <li><span class="icon-park"></span><strong>Universal Islands of Adventure (IOA):</strong> Conocido por sus emocionantes montañas rusas y tierras inmersivas como The Wizarding World of Harry Potter - Hogsmeade y Jurassic Park.[169, 170, 171]</li>
+                <li><span class="icon-park"></span><strong>Universal Volcano Bay (VB):</strong> Un parque acuático temático tropical con un sistema de fila virtual único.[170]</li>
+                <li><span class="icon-park"></span><strong>Universal Epic Universe:</strong> El cuarto parque temático, programado para abrir el 22 de mayo de 2025.[170, 172] Aunque estará abierto durante su visita en septiembre de 2025, esperen que sea extremadamente popular y potencialmente requiera estrategias de visita específicas o tipos de boletos que pueden evolucionar tras su apertura inicial. Esta guía se centrará principalmente en USF, IOA y VB según la información disponible.</li>
+             </ul>
+             <p><span class="icon-link"></span>Sitio web oficial de Universal Orlando Resort: <a href="[https://www.universalorlando.com/web/en/us](https://www.universalorlando.com/web/en/us)" target="_blank">universalorlando.com</a> [170, 173]</p>
+
+             <h4>Horarios Estimados de los Parques (Septiembre 2025)</h4>
+             <p>Los horarios varían, así que consulten el sitio web oficial o la app de Universal Orlando para las fechas exactas.[170, 174, 175, 176] Rangos típicos:</p>
+             <ul>
+                 <li><strong>USF:</strong> Aprox. 9:00 AM - 7:00 PM u 8:00 PM.[170, 174]</li>
+                 <li><strong>IOA:</strong> Aprox. 9:00 AM - 8:00 PM o 9:00 PM.[170, 174]</li>
+                 <li><strong>Volcano Bay:</strong> Aprox. 9:00/10:00 AM - 5:00/6:00 PM.[170, 174, 176] <em>Importante:</em> Volcano Bay puede tener días de cierre programados en septiembre; verifiquen el calendario.[177]</li>
+             </ul>
+             <p><strong>Early Park Admission (EPA):</strong> Los huéspedes de hoteles de Universal (y algunos poseedores de pases anuales/boletos) pueden ingresar a uno o más de los parques temáticos (generalmente USF o IOA, y a veces VB) una hora antes (30 minutos para VB) que el público general.[4, 170, 174, 178] El parque participante y las atracciones abiertas durante EPA varían, así que confirmen los detalles para sus fechas.</p>
+
+             <h4>Costos Estimados de Boletos (2025)</h4>
+             <ul>
+                 <li><strong>Requisito Park-to-Park:</strong> Para poder montar el Hogwarts Express entre Diagon Alley (USF) y Hogsmeade (IOA), necesitan un boleto Park-to-Park.[174, 177, 179] Es muy recomendable para la experiencia completa de Harry Potter.</li>
+                 <li><strong>Boleto Recomendado (4 Días, 3 Parques, Park-to-Park):</strong> Para una visita de 3-4 días que incluya los dos parques temáticos principales y Volcano Bay, un boleto Park-to-Park de 4 días para 3 parques es una opción flexible.</li>
+                 <li><strong>Costos Estimados y Promociones:</strong> Los precios de los boletos varían según la fecha. Un boleto de 4 días, 3 parques, Park-to-Park podría costar alrededor de $375-$400 USD+ por persona antes de impuestos.[53, 54] <strong>Sin embargo, Universal frecuentemente ofrece promociones como "Compra 2 Días, Obtén 2 Días Gratis"</strong>.[54, 170, 177, 179] Si esta oferta está disponible para sus fechas de septiembre de 2025 (verifiquen en el sitio web de Universal), podría ofrecer un valor significativamente mejor para una visita de 4 días.</li>
+                 <li><strong>Ofertas para Residentes de Florida/Militares:</strong> Consulten el sitio web de Universal para posibles descuentos o pases especiales para residentes de Florida [170] o militares (Freedom Pass).[53]</li>
+             </ul>
+             <div class="highlight">
+                <p>La existencia frecuente de ofertas promocionales de boletos en Universal (como "Compra X Días, Obtén Y Días Gratis") hace que sea esencial revisar la sección de ofertas especiales en su sitio web antes de comprar boletos estándar basados en fecha.[54, 170, 177, 179] Para experimentar plenamente The Wizarding World of Harry Potter, la opción Park-to-Park es prácticamente indispensable.</p>
+             </div>
+         </article>
+
+         <article id="uor-accesibilidad">
+             <h3><span class="icon-accessibility"></span>Accesibilidad en Universal Orlando</h3>
+             <p>Universal Orlando Resort ofrece varios servicios para huéspedes con discapacidades. <span class="icon-link"></span>Página principal de Accesibilidad de UOR: <a href="[https://www.universalorlando.com/web/en/us/plan-your-visit/accessibility-information](https://www.universalorlando.com/web/en/us/plan-your-visit/accessibility-information)" target="_blank">Información de Accesibilidad</a>.[170, 174]</p>
+
+             <div class="accessibility-info">
+                 <h4>Adaptación de Fila de Atracción (Tarjeta IAC de IBCCES)</h4>
+                 <p>Universal utiliza un sistema diferente al DAS de Disney para la adaptación de filas.</p>
+                 <ul>
+                     <li><strong>Proceso:</strong> Los huéspedes que necesiten adaptaciones porque no pueden esperar en filas convencionales debido a una discapacidad deben registrarse para obtener la Tarjeta de Accesibilidad Individual (IAC) de IBCCES a través de su sitio web (AccessibilityCard.org).[174] Se recomienda hacerlo con al menos 30 días de antelación a la visita (mínimo 48 horas antes).[174]</li>
+                     <li><strong>Registro:</strong> El proceso de registro en IBCCES requiere cargar documentación de apoyo (no necesariamente un diagnóstico específico).[174]</li>
+                     <li><strong>Revisión y Pase de Asistencia:</strong> Una vez que IBCCES emite la tarjeta IAC, Universal Orlando revisa la información (un miembro del equipo puede contactar al huésped) para determinar la adaptación apropiada, que suele ser el Pase de Asistencia para Atracciones (Attractions Assistance Pass - AAP).[174]</li>
+                     <li><strong>Obtención del AAP:</strong> Al llegar al parque, el titular de la tarjeta IAC debe presentarla en Guest Services para recibir el AAP físico.[174]</li>
+                     <li><strong>Funcionamiento del AAP:</strong> Similar al DAS, permite al huésped obtener un horario de regreso para las atracciones basado en el tiempo de espera actual.[174]</li>
+                     <li><strong>Nota Importante:</strong> Los huéspedes que solo necesitan usar una silla de ruedas o ECV generalmente no requieren la tarjeta IAC, ya que la mayoría de las filas son accesibles para sillas de ruedas (con excepciones notables como Pteranodon Flyers y el acceso a la fila del Hogwarts Express para ECVs).[174, 180]</li>
+                 </ul>
+                 <div class="highlight">
+                     <p>El requisito de registrarse previamente con una organización externa (IBCCES) es un paso crucial y distintivo del proceso de Universal.[174] Las familias que necesiten adaptaciones en las filas deben iniciar este proceso con bastante antelación (idealmente más de 30 días) para asegurar una experiencia fluida a su llegada. No es posible simplemente solicitar un pase de asistencia en Guest Services sin haber completado el registro IAC previamente.</p>
+                 </div>
+             </div>
+
+             <h4>Asistencia de Movilidad</h4>
+             <ul>
+                 <li><strong>Alquiler de Sillas de Ruedas/ECV:</strong> Disponibles para alquilar. Costos: Silla de ruedas manual ~$15/día; ECV regular ~$75/día; ECV con toldo ~$95/día.[174] Se requiere firmar un contrato de alquiler.[174]</li>
+                 <li><strong>Accesibilidad de Filas:</strong> La mayoría de las filas son accesibles para sillas de ruedas manuales.[174, 180] Los ECV no pueden ingresar a la mayoría de las filas (excepto algunas áreas de espera).[174, 180] Los requisitos de transferencia varían; consulten la Guía de Seguridad y Accesibilidad del Pasajero.[180, 181]</li>
+                 <li><strong>Transporte Accesible:</strong> Los autobuses lanzadera del resort tienen elevadores para sillas de ruedas/ECV.[174, 180] Los taxis acuáticos también pueden ser accesibles (verificar).</li>
+                 <li><strong>Áreas de Visualización Accesibles:</strong> Disponibles para espectáculos y desfiles, marcadas con el símbolo internacional de accesibilidad.[174, 180]</li>
+                 <li><strong>Accesibilidad en Hoteles:</strong> Los hoteles de Universal cumplen con los requisitos de accesibilidad y ofrecen habitaciones adaptadas (duchas accesibles, barras de apoyo, etc.).[174, 180]</li>
+             </ul>
+
+             <h4>Otros Servicios</h4>
+             <ul>
+                 <li><strong>Baños:</strong> Hay baños accesibles disponibles. La disponibilidad específica de baños acompañantes (Companion Restrooms) no se detalla explícitamente en los fragmentos, pero es probable que existan; consulten los mapas del parque o Guest Services.[174]</li>
+                 <li><strong>Animales de Servicio:</strong> Son bienvenidos. Existen reglas específicas para su manejo, áreas de alivio designadas y procedimientos para montar en atracciones (algunas atracciones pueden requerir que el animal espere en una perrera portátil o con un miembro del grupo).[174] Consulten la Guía de Seguridad.[180]</li>
+                 <li><strong>Salas Silenciosas (Quiet Rooms):</strong> Universal ofrece salas silenciosas dedicadas para huéspedes que necesiten un descanso de la sobrecarga sensorial. Consulten en Guest Services la ubicación y disponibilidad.[180]</li>
+                 <li><strong>Interpretación en Lenguaje de Señas (ASL):</strong> Disponible para algunos espectáculos en vivo con aviso previo de 14 días por correo electrónico a SignLanguageServices@universalorlando.com.[174]</li>
+                 <li><strong>Guiones en Braille/Letra Grande:</strong> Disponibles para huéspedes con discapacidades visuales.[180]</li>
+             </ul>
+
+             <h4>Recursos de Planificación de Accesibilidad</h4>
+             <p>Consulten los siguientes recursos para obtener información detallada:</p>
+             <ul>
+                 <li><span class="icon-link"></span><a href="[https://www.universalorlando.com/web/en/us/plan-your-visit/accessibility-information](https://www.universalorlando.com/web/en/us/plan-your-visit/accessibility-information)" target="_blank">Página de Información de Accesibilidad de UOR</a> [170, 174]</li>
+                 <li><span class="icon-link"></span>Guía de Seguridad y Accesibilidad del Pasajero (disponible para descargar en la página de accesibilidad o en Guest Services) [180, 181]</li>
+                 <li><span class="icon-link"></span><a href="[https://AccessibilityCard.org](https://AccessibilityCard.org)" target="_blank">Sitio de Registro de IBCCES IAC</a> [174]</li>
+             </ul>
+         </article>
+
+         <article id="uor-usf-ioa">
+             <h3><span class="icon-park"></span>Universal Studios Florida y Islands of Adventure: Selecciones Principales y Consejos</h3>
+             <p class="address">Dirección: 6000 Universal Blvd, Orlando, FL 32819 (Dirección general del resort).[175, 182, 183, 184]</p>
+
+             <h4>Experiencias Clave</h4>
+             <ul>
+                 <li><strong>The Wizarding World of Harry Potter:</strong>
+                     <ul>
+                         <li><em>Diagon Alley (USF):</em> Callejón inmersivo con tiendas, restaurantes (Leaky Cauldron) y la atracción principal Harry Potter and the Escape from Gringotts.[170, 171]</li>
+                         <li><em>Hogsmeade (IOA):</em> Pueblo nevado con el Castillo de Hogwarts (sede de Harry Potter and the Forbidden Journey), Flight of the Hippogriff y la muy popular Hagrid's Magical Creatures Motorbike Adventure.[170, 171] Cerca se encuentra Jurassic World VelociCoaster.</li>
+                         <li><em>Hogwarts Express:</em> Tren que conecta ambos parques (Diagon Alley y Hogsmeade). <strong>Requiere boleto Park-to-Park</strong>.[174, 180] Ofrece una experiencia diferente en cada dirección.[2]</li>
+                         <li><em>Ollivanders:</em> Experiencia interactiva donde "la varita elige al mago" (ubicaciones en ambos parques).[174]</li>
+                     </ul>
+                 </li>
+                 <li><strong>Otras Atracciones Destacadas (USF):</strong> Hollywood Rip Ride Rockit (montaña rusa con música personalizable) [171], TRANSFORMERS: The Ride-3D [172], Revenge of the Mummy, Men in Black Alien Attack, Illumination's Villain-Con Minion Blast [185], E.T. Adventure.</li>
+                 <li><strong>Otras Atracciones Destacadas (IOA):</strong> Jurassic World VelociCoaster (montaña rusa intensa) [174, 185], The Incredible Hulk Coaster (lanzamiento de alta velocidad) [172], Doctor Doom's Fearfall (lanzamiento vertical), The Amazing Adventures of Spider-Man (simulador 3D), Jurassic Park River Adventure (paseo acuático con caída).</li>
+             </ul>
+
+             <h4>Estrategias</h4>
+             <ul>
+                 <li><strong>Early Park Admission (EPA):</strong> Aprovechen la hora extra para dirigirse inmediatamente a Hagrid's Magical Creatures Motorbike Adventure (que a menudo no está incluida en el Express Pass [64] y acumula largas filas) o a Jurassic World VelociCoaster.[2]</li>
+                 <li><strong>Filas de Jinete Individual (Single Rider):</strong> Muchas atracciones principales ofrecen esta opción (Hagrid's, VelociCoaster, Forbidden Journey, Gringotts, Rip Ride Rockit, Mummy, Men in Black, Smugglers Run [139]). Es una excelente manera de reducir la espera si no les importa ir separados de su grupo.</li>
+                 <li><strong>Aplicación Universal Orlando:</strong> Utilícenla para verificar tiempos de espera en tiempo real, ver mapas del parque, realizar pedidos móviles de comida y, si es necesario, unirse a filas virtuales (aunque menos común ahora fuera de Volcano Bay).[186]</li>
+             </ul>
+         </article>
+
+         <article id="uor-vb">
+             <h3><span class="icon-park"></span>Volcano Bay: Su Guía de TapuTapu</h3>
+             <p class="address">Dirección: 6000 Universal Blvd, Orlando, FL 32819.[176, 187]</p>
+             <p>Volcano Bay opera principalmente con un sistema de fila virtual gestionado por el dispositivo portátil TapuTapu.</p>
+
+             <h4>El Dispositivo Portátil TapuTapu</h4>
+             <ul>
+                 <li>Se entrega gratuitamente a cada visitante al entrar al parque.[188, 189, 190]</li>
+                 <li>Es una pulsera resistente al agua, similar a un reloj digital.[188, 190]</li>
+                 <li><strong>Debe devolverse</strong> en los contenedores designados al salir del parque.[189, 190, 191]</li>
+             </ul>
+
+             <h4>Funciones Principales del TapuTapu</h4>
+             <ul>
+                 <li><strong>TapTu Ride (Fila Virtual):</strong> Es la función principal. Toquen su TapuTapu en el tótem situado a la entrada de una atracción para recibir un horario de regreso.[188, 189, 190, 191] La pulsera vibrará cuando sea su turno de regresar y unirse a la fila física corta.[188, 189, 190]
+                     <ul>
+                         <li>Solo pueden tener <strong>una reserva de fila virtual activa a la vez</strong>. Tocar en otro tótem cancelará la reserva anterior y la reemplazará con la nueva.[188]</li>
+                         <li>Algunas atracciones pueden indicar "Ride Now" (Montar Ahora), lo que significa que no hay espera virtual y pueden unirse directamente a la fila (aún así, toquen su TapuTapu al entrar).[188, 189]</li>
+                         <li><strong>Recomendación:</strong> Toquen en Krakatau Aqua Coaster (la montaña rusa acuática) tan pronto como entren al parque, ya que es la más popular y puede alcanzar capacidad rápidamente.[189]</li>
+                     </ul>
+                 </li>
+                 <li><strong>TapTu Pay (Pago):</strong> Pueden vincular una tarjeta de crédito a su cuenta de Universal Orlando (a través de la app oficial) y usar el TapuTapu para realizar compras de comida, bebida y mercancía dentro de Volcano Bay.[188, 191]
+                     <ul>
+                         <li>Requiere crear una cuenta en la app de Universal Orlando y vincular sus boletos del parque y su tarjeta de crédito <strong>antes</strong> de poder usar esta función.[188] Se puede establecer un PIN para mayor seguridad.[188]</li>
+                         <li>Toda la información personal se borra del TapuTapu al devolverlo.[188]</li>
+                     </ul>
+                 </li>
+                 <li><strong>TapTu Snap (Fotos):</strong> Vincula automáticamente las fotos tomadas en las atracciones y en los puntos de fotos designados del parque a su cuenta My Universal Photos.[188, 189, 190] Hay varios "Selfie Spots" interactivos.[190]</li>
+                 <li><strong>TapTu Lock (Taquillas/Lockers):</strong> Utilicen su TapuTapu para alquilar y acceder a las taquillas disponibles en el parque.[188, 189, 190, 191] No necesitan recordar un número o combinación. Hay diferentes tamaños disponibles con costos que varían (aprox. $10-$20 USD).[188, 189] Se pueden vincular hasta 4 TapuTapus a una sola taquilla.[188]</li>
+                 <li><strong>TapTu Play (Interacción):</strong> Busquen los símbolos del volcán por el parque. Toquen su TapuTapu en ellos para activar efectos especiales como chorros de agua, sonidos o luces.[188, 189, 190, 191]</li>
+             </ul>
+             <div class="highlight">
+                 <p>Dominar el uso del TapuTapu es fundamental para disfrutar de Volcano Bay eficientemente. Configurar TapTu Pay en la aplicación de Universal Orlando *antes* de llegar al parque les ahorrará un tiempo valioso y les permitirá realizar compras sin necesidad de llevar efectivo o tarjetas. Entender cómo funciona el sistema de fila virtual TapTu Ride y priorizar las atracciones más populares como Krakatau Aqua Coaster al inicio del día es clave para minimizar las esperas.</p>
+             </div>
+         </article>
+
+         <article id="uor-express">
+             <h3><span class="icon-strategy"></span>Saltando las Filas: Universal Express Pass Explicado</h3>
+             <p>Universal Express Pass es el sistema de pago de UOR para reducir los tiempos de espera en la mayoría de las atracciones de Universal Studios Florida y Islands of Adventure.[4, 64, 185, 186]</p>
+
+             <h4>Tipos y Opciones</h4>
+             <ul>
+                 <li><strong>Universal Express Pass (Estándar):</strong> Permite saltar la fila regular <strong>una vez</strong> por atracción participante.[64, 185, 192]</li>
+                 <li><strong>Universal Express Unlimited Pass:</strong> Permite saltar la fila regular <strong>ilimitadas veces</strong> por atracción participante.[4, 64, 178, 185, 192, 193, 194]</li>
+                 <li><strong>Opciones de Parque:</strong> Se venden como pases para 1 Parque (USF o IOA) o 2 Parques (USF y IOA).[64, 185, 195] También existen opciones de varios días.[64, 65]</li>
+                 <li><strong>Volcano Bay Express:</strong> Es un producto separado. Hay una versión estándar (salta la fila virtual una vez en atracciones seleccionadas) y una versión Plus (salta la fila virtual una vez en todas las atracciones).[4, 64, 192]</li>
+                 <li><strong>Epic Universe:</strong> El Express Pass para Epic Universe es un producto separado o parte de pases de 3 o 4 parques específicos. El beneficio gratuito de los hoteles Premier <strong>no</strong> incluye Epic Universe.[178, 185, 196]</li>
+                 <li><strong>Exclusiones Notables:</strong> Generalmente, Hagrid's Magical Creatures Motorbike Adventure y Pteranodon Flyers en IOA no aceptan Express Pass.[64] Verifiquen la lista actual de atracciones participantes.</li>
+             </ul>
+
+             <h4>Costo</h4>
+             <p>El precio del Express Pass es muy variable y depende de la fecha (más caro en días de alta demanda) y del tipo de pase.[4, 64, 65]</p>
+             <ul>
+                 <li>Express Estándar 2 Parques: Comienza alrededor de $125 USD por persona por día.[64]</li>
+                 <li>Express Unlimited 2 Parques: Comienza alrededor de $135 USD por persona por día.[64]</li>
+                 <li>En temporada alta, los precios pueden superar los $300-$370 USD por persona por día.[64, 195]</li>
+                 <li>Volcano Bay Express: Comienza alrededor de $20 USD (Estándar) / $50 USD (Plus) por persona por día.[64, 197]</li>
+             </ul>
+
+             <h4>Beneficio Gratuito con Hoteles Premier (Signature Collection)</h4>
+             <p>Una de las mayores ventajas de alojarse en los hoteles de categoría Premier de Universal (actualmente llamados Signature Collection) es la inclusión del <strong>Universal Express Unlimited Pass GRATUITO</strong> para USF y IOA.</p>
+             <ul>
+                 <li><strong>Hoteles Incluidos:</strong> Loews Portofino Bay Hotel, Hard Rock Hotel Orlando, Loews Royal Pacific Resort.[4, 178, 185, 192, 194, 195, 196, 198]</li>
+                 <li><strong>Beneficio:</strong> Todos los huéspedes registrados en la habitación reciben Express Unlimited para USF y IOA durante toda su estancia, <strong>incluyendo los días de check-in y check-out</strong>.[178, 185, 192, 195, 196, 198]</li>
+                 <li><strong>Cómo Funciona:</strong> La llave de la habitación del hotel actúa como el Express Pass.[192, 195, 196, 198]</li>
+                 <li><strong>Hoteles Excluidos:</strong> Loews Sapphire Falls Resort, Universal Aventura Hotel, Universal Cabana Bay Beach Resort, Universal Endless Summer Resort (Surfside & Dockside), Universal Stella Nova Resort, Universal Terra Luna Resort, Universal Helios Grand Hotel <strong>NO</strong> incluyen este beneficio gratuito.[192, 196]</li>
+             </ul>
+             <div class="highlight">
+                 <p>Para familias de 3 o 4 personas que planean visitar USF e IOA durante varios días y desean la comodidad del Express Pass, alojarse en uno de los tres hoteles Premier (Portofino Bay, Hard Rock, Royal Pacific) a menudo resulta ser una opción más económica que comprar los pases Express Unlimited por separado.[195, 196] El valor diario del Express Unlimited gratuito (que puede superar los $200 USD por persona en días concurridos [64, 195]) puede compensar con creces la diferencia de precio de la habitación en comparación con hoteles de categorías inferiores. Este beneficio se aplica a todos los días de la estancia, incluidos los días de llegada y salida, maximizando su valor.</p>
+             </div>
+
+             <table>
+                 <caption>Tabla: Opciones de Universal Express Pass y Beneficio de Hotel Premier</caption>
+                 <thead>
+                     <tr>
+                         <th>Tipo de Pase</th>
+                         <th>Parques Incluidos</th>
+                         <th>Usos por Atracción</th>
+                         <th>Costo Inicial (por persona/día, +impuestos)</th>
+                         <th>¿Incluido con Estancia en Hotel?</th>
+                         <th>Referencias Clave</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>Express Pass (Estándar)</td>
+                         <td>USF <strong>o</strong> IOA (1 Parque)</td>
+                         <td>Una vez</td>
+                         <td>~$110-$115+</td>
+                         <td>No</td>
+                         <td>[64, 65]</td>
+                     </tr>
+                     <tr>
+                         <td>Express Pass (Estándar)</td>
+                         <td>USF <strong>y</strong> IOA (2 Parques)</td>
+                         <td>Una vez</td>
+                         <td>~$125+</td>
+                         <td>No</td>
+                         <td>[64, 65]</td>
+                     </tr>
+                     <tr>
+                         <td>Express Unlimited</td>
+                         <td>USF <strong>o</strong> IOA (1 Parque)</td>
+                         <td>Ilimitado</td>
+                         <td>~$135-$140+</td>
+                         <td>No</td>
+                         <td>[64, 65]</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Express Unlimited</strong></td>
+                         <td><strong>USF y IOA (2 Parques)</strong></td>
+                         <td><strong>Ilimitado</strong></td>
+                         <td>~$135+</td>
+                         <td><strong>Sí</strong> (Solo Portofino Bay, Hard Rock, Royal Pacific)</td>
+                         <td>[4, 64, 65, 178, 185, 192, 193, 194, 195, 196, 198]</td>
+                     </tr>
+                     <tr>
+                         <td>Volcano Bay Express</td>
+                         <td>VB (Atracciones Seleccionadas)</td>
+                         <td>Una vez</td>
+                         <td>~$20+</td>
+                         <td>No</td>
+                         <td>[64, 197]</td>
+                     </tr>
+                     <tr>
+                         <td>Volcano Bay Express Plus</td>
+                         <td>VB (Todas las Atracciones)</td>
+                         <td>Una vez</td>
+                         <td>~$50+</td>
+                         <td>No</td>
+                         <td>[64, 197]</td>
+                     </tr>
+                 </tbody>
+             </table>
+             <p class="price-note">Esta tabla resume las diferentes opciones de Express Pass, destacando el valioso beneficio incluido en los hoteles Premier, lo que ayuda a tomar decisiones informadas sobre la compra de pases o la elección de alojamiento.</p>
+         </article>
+
+         <article id="uor-dining">
+             <h3><span class="icon-dining"></span>Comidas en Universal</h3>
+             <ul>
+                 <li><strong>Opciones:</strong> Hay una amplia variedad de restaurantes de servicio rápido (Quick Service) y servicio de mesa (Table Service) dentro de los parques temáticos y en Universal CityWalk.[2, 171]</li>
+                 <li><strong>Reservas:</strong> Se recomienda hacer reservas para los restaurantes de servicio de mesa populares, especialmente en CityWalk (ej. Bigfire, Antojitos, Toothsome Chocolate Emporium) y dentro de los parques (ej. Mythos en IOA, Leaky Cauldron/Three Broomsticks en Wizarding World).[2, 186] Las reservas se pueden hacer a través de la app o el sitio web de Universal.[186]</li>
+                 <li><strong>Costos Estimados:</strong>
+                     <ul>
+                         <li>Comida de Servicio Rápido (QS): Los platos principales suelen costar entre $13 y $22 USD.[61, 199, 200] Presupuesten unos $50-$70 USD por persona por día para comidas QS y snacks.[60, 200]</li>
+                         <li>Comida de Servicio de Mesa (TS): Los platos principales promedian entre $20 y $35 USD, pero pueden ser más altos en restaurantes de autor.[61] Una comida completa (entrante, plato principal, bebida, postre) puede costar entre $50 y $100+ USD por persona.[60, 61, 200]</li>
+                         <li>Comida con Personajes (Marvel): Aproximadamente $61 USD por persona.[201]</li>
+                     </ul>
+                 </li>
+                 <li><strong>Ahorros:</strong> Consideren los vasos de recarga Coca-Cola Freestyle o los cubos de palomitas recargables si planean consumir muchas bebidas o palomitas durante el día.[60]</li>
+             </ul>
+         </article>
+    </section>
+
+    <section id="ksc">
+        <h2><span class="icon-park"></span>Kennedy Space Center: Viaje Más Allá de la Tierra (Aprox. 1 Día)</h2>
+
+        <article id="ksc-overview">
+            <h3><span class="icon-info"></span>Descripción General de KSC: Horarios, Boletos y Cómo Llegar</h3>
+            <p>El Kennedy Space Center Visitor Complex (KSCVC) ofrece una mirada fascinante a la historia y el futuro de la exploración espacial estadounidense.</p>
+            <ul>
+                <li><strong>Ubicación:</strong> Space Commerce Way, Merritt Island, FL 32953.[202, 203] Se encuentra en la costa este de Florida, aproximadamente a 1 - 1.5 horas en coche desde el área de Kissimmee/Orlando.[30, 31, 32]</li>
+                <li><span class="icon-link"></span>Sitio web oficial de KSC: <a href="[https://www.kennedyspacecenter.com/](https://www.kennedyspacecenter.com/)" target="_blank">kennedyspacecenter.com</a>.[204]</li>
+                <li><strong>Horarios de Operación:</strong> Generalmente abre de 9:00 AM a 5:00 PM, aunque puede extenderse hasta las 6:00 PM en algunas épocas.[203, 204, 205] Es fundamental verificar el calendario oficial para septiembre de 2025.</li>
+                <li><strong>Costos Estimados de Boletos (2025):</strong>
+                    <ul>
+                        <li>Admisión de 1 Día: ~$75 USD adulto (12+), ~$65 USD niño (3-11) + impuestos.[55, 56, 66, 206, 207, 208]</li>
+                        <li>Admisión de 2 Días: ~$89 USD adulto, ~$79 USD niño + impuestos. Permite una segunda visita dentro de los 6 meses siguientes.[55, 56, 207, 209] Recomendado para ver todo con calma.[55]</li>
+                        <li>Descuentos: Disponibles para militares y personas mayores (55+) (a menudo requieren compra en taquilla).[55, 56]</li>
+                        <li>Estacionamiento: ~$15 USD por coche.[66, 210]</li>
+                        <li>Experiencias Adicionales: Actividades como "Chat with an Astronaut" o tours especiales tienen un costo adicional y no están incluidas en la admisión general.[56]</li>
+                    </ul>
+                </li>
+                <li><strong>Visualización de Lanzamientos:</strong> Ver un lanzamiento de cohete desde KSC es una experiencia única. Consulten la sección "See A Launch" en el sitio web oficial para el calendario de lanzamientos previstos.[204] Tengan en cuenta que los lanzamientos pueden reprogramarse con poca antelación. La visualización desde el Visitor Complex a menudo requiere boletos especiales de visualización (costo adicional) o puede ser posible con la admisión general dependiendo de la ubicación del lanzamiento y las áreas de visualización designadas ese día.</li>
+            </ul>
+        </article>
+
+        <article id="ksc-experiencias">
+            <h3><span class="icon-attraction"></span>Experiencias Icónicas</h3>
+            <p>La admisión general al KSC Visitor Complex incluye acceso a una gran cantidad de exhibiciones y atracciones:</p>
+            <ul>
+                <li><strong>Space Shuttle Atlantis Exhibit:</strong> Vean de cerca el transbordador espacial Atlantis, exhibido como si estuviera en órbita, junto con más de 60 exhibiciones interactivas y simuladores.[204, 205, 209]</li>
+                <li><strong>Shuttle Launch Experience®:</strong> Un emocionante simulador que replica las sensaciones de un lanzamiento de transbordador espacial.[204, 205, 209, 211, 212] Requisito de altura: 44 pulgadas (1.12m).[209] Existe una sala de observación accesible para quienes no pueden o no desean montar en el simulador.[213]</li>
+                <li><strong>Gateway: The Deep Space Launch Complex®:</strong> Explora el presente y el futuro de la exploración espacial, incluyendo artefactos de vuelos espaciales actuales y conceptos para misiones futuras.[204, 205, 211]</li>
+                <li><strong>Heroes & Legends featuring the U.S. Astronaut Hall of Fame®:</strong> Celebra a los pioneros de los programas espaciales tempranos de la NASA a través de artefactos, una experiencia teatral 4D y el Salón de la Fama de los Astronautas.[204, 205, 208, 209, 211]</li>
+                <li><strong>Rocket Garden:</strong> Un impresionante jardín al aire libre con cohetes históricos de las misiones Mercury, Gemini y Apollo.[208]</li>
+                <li><strong>Kennedy Space Center Bus Tour:</strong> Un recorrido en autobús incluido con la admisión que lleva a los visitantes "detrás de las puertas" a áreas restringidas de KSC.[204, 208, 209, 212] Ofrece vistas del Edificio de Ensamblaje de Vehículos (VAB), plataformas de lanzamiento y transportadores oruga. El tour es la única forma de acceder al Apollo/Saturn V Center.[212] Los autobuses salen aproximadamente cada 15 minutos [[208]
