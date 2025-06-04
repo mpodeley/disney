@@ -3,419 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventura Familiar Florida - Sept 2025 (Interactivo)</title>
+    <title>Viaje Económico a Disney & Universal – Familia Podeley · Sept 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 15px;
-        }
-        h1 {
-            text-align: center;
-            color: #00509e;
-            border-bottom: 3px solid #00509e;
-            padding-bottom: 10px;
-            margin-bottom: 1.5em;
-        }
-        h2 {
-            color: #00509e;
-            margin-top: 1.8em;
-            margin-bottom: 0.8em;
-            border-bottom: 1px solid #dee2e6;
-            padding-bottom: 5px;
-        }
-        h3 {
-            color: #1971c2;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            display: inline; /* Para que summary funcione bien */
-        }
-        a {
-            color: #0077cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style: none;
-            padding-left: 10px; /* Pequeña indentación para contenido de details */
-            margin-top: 10px;
-        }
-        li {
-            margin-bottom: 0.6em;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .card h2, .card summary { /* Aplicar a summary */
-            margin-top: 0;
-            cursor: pointer; /* Indica que se puede hacer clic */
-        }
-         summary {
-            font-weight: bold;
-            font-size: 1.15em; /* Tamaño similar a h3 */
-            color: #1971c2; /* Mismo color que h3 */
-            margin-bottom: 10px; /* Espacio antes del contenido desplegable */
-            display: list-item; /* Muestra el marcador de раскрытие/свертывание */
-        }
-        details > summary { /* Estilo específico para summary dentro de details */
-          list-style: none; /* Ocultar el marcador por defecto si prefieres uno personalizado */
-        }
-        details > summary::-webkit-details-marker { /* Ocultar marcador en Chrome/Safari */
-          display: none;
-        }
-        details > summary::before { /* Marcador personalizado (opcional) */
-          content: '▶ '; /* Triángulo hacia la derecha (cerrado) */
-          margin-right: 5px;
-          font-size: 0.8em;
-        }
-        details[open] > summary::before {
-          content: '▼ '; /* Triángulo hacia abajo (abierto) */
-        }
-
-        .icon {
-            margin-right: 8px;
-            font-size: 1.1em;
-            vertical-align: middle;
-        }
-        .photo-placeholder {
-            background-color: #e9ecef;
-            text-align: center;
-            padding: 40px 20px;
-            border-radius: 4px;
-            margin: 15px 0;
-            color: #6c757d;
-            font-style: italic;
-        }
-        .map-embed {
-            margin-top: 15px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden; /* Para que el borde redondeado contenga el iframe */
-        }
-         .map-embed iframe {
-            width: 100%;
-            height: 300px; /* Altura ajustable */
-            border: 0;
-        }
-        .official-link {
-             display: inline-block;
-             background-color: #e3f9e3;
-             color: #2f9e44;
-             padding: 5px 10px;
-             border-radius: 4px;
-             font-size: 0.9em;
-             margin-top: 5px;
-        }
-        .official-link:hover{
-            background-color: #c3f1c3;
-            text-decoration: none;
-        }
-        .warning {
-            background-color: #fff3cd;
-            border-left: 5px solid #ffeeba;
-            padding: 10px 15px;
-            margin: 1em 0;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-         /* Iconos (manteniendo los anteriores) */
-        .icon-park::before { content: "🌳 "; }
-        .icon-attraction::before { content: "🎢 "; }
-        .icon-dining::before { content: "🍽️ "; }
-        .icon-hotel::before { content: "🏨 "; }
-        .icon-accessibility::before { content: "♿ "; }
-        .icon-transport::before { content: "🚗 "; }
-        .icon-info::before { content: "ℹ️ "; }
-        .icon-money::before { content: "💲 "; }
-        .icon-calendar::before { content: "📅 "; }
-        .icon-strategy::before { content: "💡 "; }
-        .icon-link::before { content: "🔗 "; }
-        .icon-map::before { content: "🗺️ "; }
-        .icon-photo::before { content: "📸 "; }
-        .icon-ticket::before { content: "🎟️ "; }
-        .icon-weather::before { content: "☀️ "; }
-        .icon-alert::before { content: "⚠️ "; }
-        .icon-rocket::before { content: "🚀 "; }
-        .icon-science::before { content: "🔬 "; }
-        .icon-beach::before { content: "🏖️ "; }
-
+        body {font-family: 'Inter', sans-serif;}
+        a {text-decoration: underline;}
     </style>
 </head>
-<body>
-<div class="container">
-    <h1><span class="icon icon-park"></span>Aventura Familiar Florida - Sept 2025</h1>
-    <p>Un resumen visual e interactivo para tu viaje combinando magia, espacio y playa.</p>
+<body class="bg-sky-50 text-slate-800">
+    <header class="bg-indigo-700 text-white py-6 mb-8 shadow-lg">
+        <h1 class="text-3xl font-bold text-center">Itinerario Familiar Low‑Cost · Miami ➜ Orlando · 11–20 Sep 2025</h1>
+        <p class="text-center mt-2">Matías, Julieta, Francisca, mamá, mi hermana, papá & su novia</p>
+    </header>
 
-    <div class="warning">
-        <span class="icon icon-alert"></span><strong>Nota:</strong> Reemplaza los `[Placeholder Foto ...]` con URLs de imágenes y los comentarios `` con el código real obtenido de Google Maps (busca el lugar > Compartir > Embed a map > Copiar HTML). Verifica los enlaces antes de tu viaje. Precios/horarios son estimados y deben confirmarse.
-    </div>
-
-    <div class="card">
-        <details>
-            <summary><span class="icon icon-calendar"></span>Planificación Rápida (Haz clic para expandir)</summary>
-            <ul>
-                <li><span class="icon icon-weather"></span><strong>Clima Septiembre:</strong> Caluroso, húmedo, lluvias/tormentas por la tarde. ¡Empaca ligero, protección solar y ponchos!</li>
-                <li><span class="icon icon-alert"></span><strong>Temporada Huracanes:</strong> Septiembre es pico. Mantente informado y considera seguro de viaje.</li>
-                <li><span class="icon icon-money"></span><strong>Multitudes:</strong> Generalmente bajas, especialmente a principios/mediados de mes (post-Labor Day).</li>
-                <li><span class="icon icon-ticket"></span><strong>Evento WDW:</strong> Mickey's Not-So-Scary Halloween Party (noches selectas, requiere ticket aparte, Magic Kingdom cierra temprano esos días). <a href="https://disneyworld.disney.go.com/events-tours/magic-kingdom/mickeys-not-so-scary-halloween-party/" target="_blank" class="official-link">Verificar Fechas</a></li>
-                <li><span class="icon icon-transport"></span><strong>Transporte:</strong>
-                    <ul>
-                        <li>Alquiler de minivan recomendado (reservar con antelación).</li>
-                        <li>MIA Rental Car Center: Acceso vía MIA Mover gratuito desde terminales.
-                            <div class="map-embed">
-                                <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                            </div>
-                        </li>
-                        <li><span class="icon icon-strategy"></span>Peajes: Considera comprar un SunPass Mini/PRO o usar el programa de tu coche de alquiler (suele ser más caro). <a href="https://www.sunpass.com/" target="_blank" class="official-link">Info SunPass</a></li>
-                        <li>Tiempos (aprox. sin tráfico): MIA-Orlando (3.5h+), Orlando-KSC (1-1.5h), KSC-MIA (3.5h+).</li>
-                    </ul>
-                </li>
-                 <li><span class="icon icon-money"></span><strong>Presupuesto General (Estimado Familia 4 / 10 días, sin vuelos/souvenirs):</strong> $7,500 - $14,000+ USD. Varía mucho según hotel, tickets (WDW/UOR), extras (Genie+/Express), comidas.</li>
-            </ul>
-        </details>
-    </div>
-
-    <div class="card">
-        <h2><span class="icon icon-park"></span>Walt Disney World (WDW)</h2>
-         <a href="https://disneyworld.disney.go.com/" target="_blank" class="official-link">Sitio Oficial WDW</a>
-        <p>4 Parques Temáticos + Parques Acuáticos + Disney Springs.</p>
-        <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Castillo WDW]</div>
-
-        <details>
-             <summary><span class="icon icon-accessibility"></span>Accesibilidad General WDW</summary>
-             <ul>
-                 <li>Servicio DAS para ciertas discapacidades requiere <strong>registro previo por video chat</strong> (inglés). ¡Planifica con tiempo!</li>
-                 <li>WDW ofrece muchos servicios (movilidad, sensorial, etc.). Consulta la guía oficial.</li>
-                 <li><a href="https://disneyworld.disney.go.com/guest-services/guests-with-disabilities/" target="_blank" class="official-link">Info Detallada Accesibilidad WDW</a></li>
-             </ul>
-        </details>
-
-        <details>
-            <summary><span class="icon icon-strategy"></span>Genie+ / Lightning Lane (LL)</summary>
-            <ul>
-                <li>Sistema pago para saltar filas (recomendado para MK/HS).</li>
-                <li>¡NUEVO! Reserva anticipada posible (7 días antes para huéspedes hotel Disney, 3 días para otros).</li>
-                <li><a href="https://disneyworld.disney.go.com/genie/lightning-lane/" target="_blank" class="official-link">Info Genie+/LL</a></li>
-            </ul>
-        </details>
-
-         <details>
-             <summary><span class="icon icon-dining"></span>Comidas WDW</summary>
-             <ul>
-                <li>Usa Mobile Order (App) para servicio rápido y ahorrar tiempo.</li>
-                <li>Reserva restaurantes (ADR) con 60 días de antelación para los populares.</li>
-                <li><a href="https://disneyworld.disney.go.com/dining/" target="_blank" class="official-link">Info Comidas WDW</a></li>
-             </ul>
-        </details>
-
-        <div class="card">
-             <details>
-                <summary><span class="icon icon-park"></span>Magic Kingdom</summary>
-                <a href="https://disneyworld.disney.go.com/destinations/magic-kingdom/" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Magic Kingdom]</div>
-                 <ul>
-                    <li><span class="icon icon-attraction"></span><strong>Top Atracciones:</strong> Tiana's Bayou Adventure, Seven Dwarfs Mine Train, TRON Lightcycle / Run, Peter Pan's Flight, Haunted Mansion.</li>
-                    <li><span class="icon icon-strategy"></span><strong>Show Nocturno:</strong> Happily Ever After (fuegos artificiales, verificar horario, no en noches de fiesta MNSSHP).</li>
-                </ul>
-                 <div class="map-embed">
-                    <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                </div>
-            </details>
+    <!-- Vuelos -->
+    <section class="max-w-5xl mx-auto px-4 mb-12">
+        <h2 class="text-2xl font-semibold mb-4">✈️ Vuelos confirmados</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl shadow p-4">
+                <h3 class="font-bold mb-1">IDA · AR 1304</h3>
+                <p><strong>Jue 11 Sep 08:00 h</strong> — EZE → MIA (9h 15m)</p>
+                <p>Llega: 11 Sep 16:15 h · Incluye carry‑on</p>
+                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded mt-2">Código check‑in: <code>LJUBVO</code></span>
+            </div>
+            <div class="bg-white rounded-xl shadow p-4">
+                <h3 class="font-bold mb-1">VUELTA · AR 1305</h3>
+                <p><strong>Sáb 20 Sep 09:10 h</strong> — MIA → EZE  (9h 05m)</p>
+                <p>Llega: 20 Sep 19:15 h · Incluye carry‑on</p>
+                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded mt-2">Código check‑in: <code>LJUBVO</code></span>
+            </div>
         </div>
-        <div class="card">
-            <details>
-                <summary><span class="icon icon-park"></span>EPCOT</summary>
-                 <a href="https://disneyworld.disney.go.com/destinations/epcot/" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto EPCOT Spaceship Earth]</div>
-                 <ul>
-                    <li><span class="icon icon-attraction"></span><strong>Top Atracciones:</strong> Guardians of the Galaxy: Cosmic Rewind (¡Fila Virtual o ILL!), Remy's Ratatouille Adventure, Frozen Ever After, Test Track (verificar si está abierto tras reforma).</li>
-                    <li><span class="icon icon-dining"></span><strong>Evento Probable:</strong> Food & Wine Festival (World Showcase).</li>
-                    <li><span class="icon icon-strategy"></span><strong>Show Nocturno:</strong> Luminous The Symphony of Us (en la laguna).</li>
+    </section>
+
+    <!-- Presupuesto objetivo -->
+    <section class="max-w-5xl mx-auto px-4 mb-12">
+        <h2 class="text-2xl font-semibold mb-4">💸 Presupuesto objetivo (por persona)</h2>
+        <table class="w-full text-sm table-auto border border-slate-200 rounded-lg overflow-hidden">
+            <thead class="bg-slate-100">
+                <tr>
+                    <th class="px-3 py-2 text-left">Partida</th>
+                    <th class="px-3 py-2 text-right">USD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="px-3 py-2">Aéreos (pagados)</td><td class="px-3 py-2 text-right">780</td></tr>
+                <tr class="bg-slate-50"><td class="px-3 py-2">Alquiler van 12 días</td><td class="px-3 py-2 text-right">190</td></tr>
+                <tr><td class="px-3 py-2">Alojamiento (Airbnb 3 hab. Kissimmee + 2 noches Miami)</td><td class="px-3 py-2 text-right">350</td></tr>
+                <tr class="bg-slate-50"><td class="px-3 py-2">Entradas parques + KSC + Frost</td><td class="px-3 py-2 text-right">640</td></tr>
+                <tr><td class="px-3 py-2">Comidas & extras</td><td class="px-3 py-2 text-right">250</td></tr>
+                <tr class="font-bold bg-slate-100"><td class="px-3 py-2">Total estimado</td><td class="px-3 py-2 text-right">≈ 2 210</td></tr>
+            </tbody>
+        </table>
+        <p class="text-xs mt-2">Tip: ¡Comida en súper + picnic en los parques ahorra fácil USD 100 por día para 7 personas!</p>
+    </section>
+
+    <!-- Itinerario -->
+    <section class="max-w-5xl mx-auto px-4 mb-12">
+        <h2 class="text-2xl font-semibold mb-6">🗓️ Plan día por día</h2>
+        <div class="space-y-6">
+            <!-- Día 1 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 1 · Jue 11 Sep · Llegada a Miami</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Retirar <strong>van 12‑pax</strong> (<a href="https://www.discountrentalcar.com" target="_blank">cotar online</a>) – evitar 2 autos.</li>
+                    <li>Conducir directo hasta <strong>Kissimmee</strong> (3 h 30 m). Parada rápida en <a href="https://www.walmart.com/" target="_blank">Walmart Supercenter</a> para víveres.</li>
+                    <li>Check‑in en Airbnb económico con piscina.</li>
                 </ul>
-                 <div class="map-embed">
-                     <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                 </div>
-            </details>
-        </div>
-         <div class="card">
-             <details>
-                <summary><span class="icon icon-park"></span>Hollywood Studios</summary>
-                 <a href="https://disneyworld.disney.go.com/destinations/hollywood-studios/" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Hollywood Studios Tower of Terror]</div>
-                 <ul>
-                    <li><span class="icon icon-attraction"></span><strong>Top Atracciones:</strong> Star Wars: Rise of the Resistance (¡muy popular, ILL recomendado!), Slinky Dog Dash, Tower of Terror, Millennium Falcon: Smugglers Run, Mickey & Minnie's Runaway Railway.</li>
-                     <li><span class="icon icon-strategy"></span><strong>Show Nocturno:</strong> Fantasmic! (anfiteatro acuático, llegar temprano o reservar paquete cena).</li>
+            </article>
+            <!-- Día 2 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 2 · Vie 12 Sep · Disney Hopper (Animal + Magic)</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Comprar <strong>Disney Park Hopper 1 día</strong> (<a href="https://disneyworld.disney.go.com/admission/tickets/" target="_blank">link oficial</a>).</li>
+                    <li>07:00 h: Salir a <strong>Animal Kingdom</strong> para rope‑drop Avatar & Kilimanjaro.</li>
+                    <li>13:00 h: bus interno o Lyft a <strong>Magic Kingdom</strong>. Must‑dos: Tron, Space Mountain, fuegos 20:00 h.</li>
+                    <li>Llevar snacks + refill bottle (ahorro ≈ USD 25 c/u).</li>
                 </ul>
-                 <div class="map-embed">
-                     <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                 </div>
-            </details>
-        </div>
-         <div class="card">
-             <details>
-                <summary><span class="icon icon-park"></span>Animal Kingdom</summary>
-                <a href="https://disneyworld.disney.go.com/destinations/animal-kingdom/" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Animal Kingdom Tree of Life]</div>
-                 <ul>
-                    <li><span class="icon icon-attraction"></span><strong>Top Atracciones:</strong> Avatar Flight of Passage (¡muy popular, ILL recomendado!), Kilimanjaro Safaris (mejor temprano/tarde), Na'vi River Journey, Expedition Everest.</li>
-                    <li><span class="icon icon-strategy"></span><strong>Shows Destacados:</strong> Festival of the Lion King, Finding Nemo: The Big Blue... and Beyond!</li>
+            </article>
+            <!-- Día 3 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 3 · Sáb 13 Sep · Universal Marathon (3 parques)</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Pase <strong>Universal 3‑Park Explorer</strong> (USF + IOA + Volcano Bay) <a href="https://www.universalorlando.com/web/en/us/tickets-packages" target="_blank">oferta online</a>.</li>
+                    <li>07:30 h: <strong>Epic Universe (soft‑open 2025) primer turno</strong> – Mario Kart & How to Train Your Dragon.</li>
+                    <li>11:00 h traslado al principal resort: <strong>Islands of Adventure</strong> + Hogwarts Express a Studios.</li>
+                    <li>16:00 h: refrescada en <strong>Volcano Bay</strong> (lockers USD 12 total).</li>
+                    <li>Cenar en CityWalk (¡cupón descuento Earl of Sandwich!).</li>
                 </ul>
-                <div class="map-embed">
-                    <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                 </div>
-            </details>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2><span class="icon icon-park"></span>Universal Orlando Resort (UOR)</h2>
-        <a href="https://www.universalorlando.com/web/en/us" target="_blank" class="official-link">Sitio Oficial UOR</a>
-        <p>3 Parques (USF, IOA, VB) + CityWalk. Epic Universe abre Mayo 2025.</p>
-        <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Globo Universal]</div>
-
-         <details>
-             <summary><span class="icon icon-ticket"></span>Tickets UOR</summary>
-             <ul>
-                <li>Se necesita <strong>Park-to-Park</strong> para el Hogwarts Express entre USF y IOA.</li>
-                <li>Busca ofertas "Compra X Días, Obtén Y Gratis" en el sitio oficial.</li>
-             </ul>
-         </details>
-
-        <details>
-             <summary><span class="icon icon-accessibility"></span>Accesibilidad General UOR</summary>
-             <ul>
-                 <li>Adaptación de filas requiere <strong>registro previo online con IBCCES</strong> (AccessibilityCard.org) para obtener la tarjeta IAC. ¡Hazlo con tiempo!</li>
-                 <li><a href="https://www.universalorlando.com/web/en/us/plan-your-visit/accessibility-information" target="_blank" class="official-link">Info Detallada Accesibilidad UOR</a></li>
-             </ul>
-        </details>
-
-         <details>
-             <summary><span class="icon icon-strategy"></span>Universal Express Pass</summary>
-             <ul>
-                <li>Sistema pago para saltar filas (diferente a Genie+).</li>
-                <li><strong>¡GRATIS (Express Unlimited para USF/IOA)!</strong> si te alojas en Hoteles Premier: <strong>Portofino Bay, Hard Rock Hotel, Royal Pacific</strong>. A menudo compensa el coste extra del hotel para familias.</li>
-                 <li><a href="https://www.universalorlando.com/web/en/us/tickets-packages/express-passes" target="_blank" class="official-link">Info Express Pass</a></li>
-             </ul>
-         </details>
-
-         <details>
-             <summary><span class="icon icon-dining"></span>Comidas UOR</summary>
-            <ul>
-                <li>Muchas opciones en parques y CityWalk.</li>
-                <li>Reservas recomendadas para restaurantes populares (ej. Mythos, Leaky Cauldron, Toothsome).</li>
-                <li><a href="https://www.universalorlando.com/web/en/us/things-to-do/dining" target="_blank" class="official-link">Info Comidas UOR</a></li>
-             </ul>
-         </details>
-
-         <div class="card">
-             <details>
-                <summary><span class="icon icon-park"></span>Universal Studios Florida (USF)</summary>
-                 <a href="https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto USF Diagon Alley]</div>
-                <ul>
-                    <li><span class="icon icon-attraction"></span><strong>Top Atracciones:</strong> The Wizarding World of Harry Potter - Diagon Alley (incl. Escape from Gringotts), Revenge of the Mummy, Hollywood Rip Ride Rockit, Men in Black Alien Attack, E.T. Adventure.</li>
-                    <li><span class="icon icon-transport"></span>Conecta con IOA vía Hogwarts Express (ticket Park-to-Park requerido).</li>
+            </article>
+            <!-- Día 4 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 4 · Dom 14 Sep · Chill + compras</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Piscina Airbnb + laundry.</li>
+                    <li>Outlet <a href="https://www.premiumoutlets.com/outlet/orlando-vineland" target="_blank">Vineland Premium</a> (7Pairs = tax‑free kids wear).</li>
                 </ul>
-                 <div class="map-embed">
-                     <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                 </div>
-            </details>
-        </div>
-         <div class="card">
-             <details>
-                <summary><span class="icon icon-park"></span>Islands of Adventure (IOA)</summary>
-                 <a href="https://www.universalorlando.com/web/en/us/theme-parks/islands-of-adventure" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto IOA Hogwarts]</div>
-                <ul>
-                    <li><span class="icon icon-attraction"></span><strong>Top Atracciones:</strong> The Wizarding World of Harry Potter - Hogsmeade (incl. Hagrid's Motorbike Adventure - ¡fila larga!, Forbidden Journey), Jurassic World VelociCoaster, The Incredible Hulk Coaster, Amazing Adventures of Spider-Man.</li>
-                     <li><span class="icon icon-transport"></span>Conecta con USF vía Hogwarts Express (ticket Park-to-Park requerido).</li>
+            </article>
+            <!-- Día 5 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 5 · Lun 15 Sep · Kennedy Space Center + Lanzamiento 🚀</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Verificar <a href="https://www.nasa.gov/launch-schedule/" target="_blank">calendario NASA</a>. Si hay Falcon 9/Atlas V ⇢ reservar <strong>Launch Viewing</strong>.</li>
+                    <li>Entrada <a href="https://www.kennedyspacecenter.com/" target="_blank">KSC Visitor Complex</a> + bus tour 10:30 h.</li>
+                    <li>Picnic en Playalinda Beach para ver despegue si horario coincide.</li>
                 </ul>
-                 <div class="map-embed">
-                    <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                 </div>
-            </details>
-        </div>
-         <div class="card">
-             <details>
-                <summary><span class="icon icon-park"></span>Volcano Bay</summary>
-                <a href="https://www.universalorlando.com/web/en/us/theme-parks/volcano-bay" target="_blank" class="official-link">Más Info</a>
-                <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Volcano Bay Krakatau]</div>
-                <ul>
-                    <li><span class="icon icon-attraction"></span>Parque acuático temático. Top Atracción: Krakatau Aqua Coaster.</li>
-                    <li><span class="icon icon-strategy"></span><strong>TapuTapu:</strong> Pulsera para filas virtuales (TapTu Ride - reserva Krakatau primero!), pagos (TapTu Pay - configura antes en la app), taquillas (TapTu Lock) y efectos (TapTu Play).</li>
-                    <li><span class="icon icon-alert"></span>Verificar días de operación en Septiembre.</li>
+            </article>
+            <!-- Día 6 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 6 · Mar 16 Sep · Cocoa Beach + Regreso a Miami</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Mañana en <a href="https://ronjonsurfshop.com/" target="_blank">Cocoa Beach</a>. Alquiler tabla bodyboard USD 10.</li>
+                    <li>Drive 3 h a Miami, check‑in hotel/hostel Little Havana.</li>
                 </ul>
-                 <div class="map-embed">
-                    <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-                 </div>
-            </details>
+            </article>
+            <!-- Día 7 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 7 · Mié 17 Sep · Frost Science & Downtown Miami</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Visita <a href="https://frostscience.org/" target="_blank">Phillip & Patricia Frost Museum of Science</a> (combo planetario).</li>
+                    <li>Almuerzo en Bayside; tarde libre para <a href="https://www.miamiandbeaches.com/neighborhoods/little-havana" target="_blank">Little Havana</a>.</li>
+                </ul>
+            </article>
+            <!-- Día 8 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 8 · Jue 18 Sep · Everglades Airboat</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Tour económico <a href="https://gatorpark.com/" target="_blank">Gator Park</a> (USD 28 pp).</li>
+                    <li>Tarde playa en South Pointe Pier.</li>
+                </ul>
+            </article>
+            <!-- Día 9 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 9 · Vie 19 Sep · Buffer / día libre</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Opciones: <em>Wynwood Walls</em>, compras en Dolphin Mall o segundo día Universal si agotados.</li>
+                    <li>Cena despedida: <a href="https://www.lacarreta.com/" target="_blank">La Carreta Cuban</a>.</li>
+                </ul>
+            </article>
+            <!-- Día 10 -->
+            <article class="bg-white rounded-xl shadow p-6">
+                <h3 class="text-lg font-bold mb-1">Día 10 · Sáb 20 Sep · Regreso a casa</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Check‑out 06:00 h · devolver van en MIA.</li>
+                    <li>Vuelo AR 1305 09:10 h → EZE. Llegada 19:15 h.</li>
+                </ul>
+            </article>
         </div>
-    </div>
+    </section>
 
-    <div class="card">
-        <h2><span class="icon icon-rocket"></span>Kennedy Space Center (KSC)</h2>
-        <a href="https://www.kennedyspacecenter.com/" target="_blank" class="official-link">Sitio Oficial KSC</a>
-        <p>Complejo de visitantes de la NASA en la costa este (aprox. 1-1.5h de Orlando).</p>
+    <!-- Tips & apps -->
+    <section class="max-w-5xl mx-auto px-4 mb-12">
+        <h2 class="text-2xl font-semibold mb-4">📱 Apps & links útiles</h2>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+            <li><a href="https://www.cheapflights.com.ar/" target="_blank">CheapFlights Argentina</a> – alertas de precios.</li>
+            <li><a href="https://mydisneyexperience.disney.go.com/" target="_blank">My Disney Experience</a> – lightning lanes & mobile orders.</li>
+            <li><a href="https://www.universalorlando.com/web/en/us/account/login" target="_blank">Universal Orlando App</a> – filas virtuales.</li>
+            <li><a href="https://gasbuddy.com/" target="_blank">GasBuddy</a> – estaciones baratas.</li>
+            <li><a href="https://splitwise.com/" target="_blank">Splitwise</a> – dividir gastos entre la tropa.</li>
+            <li><a href="https://weather.com/" target="_blank">Weather.com</a> – pronósticos (lluvia = poncho USD 1 en Walmart).</li>
+        </ul>
+    </section>
 
-        <details>
-            <summary><span class="icon icon-info"></span>Información y Experiencias KSC</summary>
-            <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto KSC Transbordador Atlantis]</div>
-            <ul>
-                <li><span class="icon icon-attraction"></span><strong>Experiencias Clave:</strong> Space Shuttle Atlantis Exhibit, Shuttle Launch Experience (simulador), Gateway: Deep Space Launch Complex, KSC Bus Tour (incluye Apollo/Saturn V Center), Rocket Garden.</li>
-                <li><span class="icon icon-calendar"></span><strong>Lanzamientos:</strong> ¡Revisa el calendario! Ver un lanzamiento es increíble (puede requerir tickets especiales). <a href="https://www.kennedyspacecenter.com/launches-and-events/events-calendar" target="_blank" class="official-link">Calendario Lanzamientos</a></li>
-                <li><span class="icon icon-ticket"></span><strong>Tickets:</strong> Admisión de 1 o 2 días disponible. Parking de pago.</li>
-             </ul>
-             <div class="map-embed">
-                 <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-             </div>
-        </details>
-    </div>
-
-     <div class="card">
-        <h2><span class="icon icon-beach"></span>Miami</h2>
-        <p>Ciencia, playa y cultura para cerrar el viaje.</p>
-         <details>
-             <summary><span class="icon icon-science"></span>Phillip and Patricia Frost Museum of Science</summary>
-            <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto Frost Science Museum]</div>
-             <ul>
-                <li>Acuario, planetario, exhibiciones interactivas.</li>
-                <li><a href="https://www.frostscience.org/" target="_blank" class="official-link">Sitio Oficial Frost Science</a></li>
-            </ul>
-             <div class="map-embed">
-                <p style="text-align:center; padding: 20px;"><em>Embebido de Mapa Interactivo (Reemplazar)</em></p>
-             </div>
-        </details>
-
-         <details>
-             <summary><span class="icon icon-info"></span>Otras Ideas en Miami</summary>
-            <div class="photo-placeholder"><span class="icon icon-photo"></span>[Placeholder Foto South Beach o Wynwood]</div>
-             <ul>
-                <li>Playas (South Beach).</li>
-                <li>Arte urbano en Wynwood Walls.</li>
-                <li>Considera excursión a los Everglades.</li>
-                <li>Vuelo de regreso desde MIA.</li>
-            </ul>
-        </details>
-    </div>
-
-    <hr>
-    <p style="text-align: center; font-size: 0.9em; color: #6c757d;">¡Disfruten de su increíble aventura en Florida!</p>
-
-</div> </body>
+    <footer class="bg-indigo-700 text-white py-4 text-center text-sm">
+        Armado con cariño & pocket‑friendly mindset. ¡A disfrutar! 🏰🎢🚀
+    </footer>
+</body>
 </html>
